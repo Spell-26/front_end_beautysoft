@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuLateralComponent
+    MenuLateralComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

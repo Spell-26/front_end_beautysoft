@@ -1,0 +1,16 @@
+.turno{
+  height: 80%;
+  width: 80%;
+  margin: 2em 0 2em 2em;
+  display: flex;
+}
+.card {
+  height: 25%;
+  width: 15%;
+  border-radius: 10px;
+  background-color: #D3D3D3;
+
+}
+.card:hover{
+  background: linear-gradient(180deg, rgba(211,211,211,1) 0%, rgba(195,91,70,1) 100%);
+}
