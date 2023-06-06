@@ -1,0 +1,49 @@
+.container{
+  position: absolute;
+  width: 17%;
+  left: 1em;
+  top: 15em;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+}
+.container h2{
+  font-size: 2em;
+  font-weight: bold;
+  color: rgba(64,5,40,1);
+}
+
+.card{
+  background-color: #D3D3D3;
+  height: 8em;
+  width: 100%;
+  margin: 1em 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #727272;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cliente{
+  width: 100%;
+  margin-left: 0.5em;
+}
+.cliente span{
+  font-weight: bold;
+  font-size: 1em;
+}
+.imagen-cliente{
+  width: 50%;
+}
+.informacion-cita{
+  width: 50%;
+  margin-top: 1em;
+  height: 5em;
+  overflow-y: scroll;
+}
+.foto-cliente{
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  margin-left: 1em;
+  margin-top: 1em;
+}

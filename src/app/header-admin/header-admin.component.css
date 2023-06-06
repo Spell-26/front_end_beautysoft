@@ -1,0 +1,67 @@
+.container{
+  width: 80%;
+  height: 5em;
+  display: flex;
+  justify-content: end;
+  box-shadow: 0px 1px 0.5px rgba(110,48,131,1) ;
+  position: absolute;
+  left: 18.5em;
+}
+
+.barra-busqueda{
+  margin-top: 1em;
+  position: relative;
+  width: 250px;
+  margin-right: 5em;
+}
+.barra-busqueda input{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(136, 134, 134);
+  border-radius: 5px;
+  outline: none;
+  color: rgba(110,48,131,1);
+  font-size: 1em;
+}
+.barra-busqueda .placeholder-busqueda {
+  position: absolute;
+  left: 0;
+  padding: 12px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgb(136, 134, 134);
+  transition: 0.5s;
+}
+
+.barra-busqueda input:valid ~ .placeholder-busqueda,
+.barra-busqueda input:focus ~ .placeholder-busqueda{
+  color: rgba(110,48,131,1);
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: rgb(255, 255, 255);
+  border-left: 1px solid rgba(110,48,131,1);
+  border-right: 1px solid rgba(110,48,131,1);
+  letter-spacing: 0.2em;
+}
+.barra-busqueda input:valid,
+.barra-busqueda input:focus{
+  border: 1px solid rgba(110,48,131,1);
+}
+
+.foto{
+  margin: 1em;
+}
+
+.material-symbols-outlined{
+  color: rgba(110,48,131,1);
+  scale: 1.5;
+  margin: 1em 0.5em 1em 0.5em;
+  cursor: pointer;
+}
+
+.foto-perfil{
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+}
