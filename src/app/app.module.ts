@@ -7,12 +7,14 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { CardComponent } from './card/card.component';
+import { ContenidoCardUsuarioComponent } from './contenido-card-usuario/contenido-card-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuLateralComponent,
-    CardComponent
+    CardComponent,
+    ContenidoCardUsuarioComponent
   ],
   imports: [
     BrowserModule,
