@@ -2,14 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5px;
 }
 
 .container-info img{
   width: 8rem;
   height: 8rem;
-  border-radius: 100%;
+  border-radius: 50%;
   margin-top: -0.7em;
   transition: transform 0.5s ease-in;
+}
+.card__nombre{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 .container-info img:hover{
   transform: rotate(-30deg);
@@ -26,13 +33,15 @@ hr{
 }
 
 .boton{
-  background-color: rgb(249, 173, 26, 1);
-  padding: 5px 20px;
+  margin-top: 13px;
+  text-align: center;
 }
 
 .enlace{
-  text-decoration: none;
+  background-color: rgb(249, 173, 26, 1);
   color: white;
+  padding: 8px 20px;
+  text-decoration: none;
 }
 
 #estado{
