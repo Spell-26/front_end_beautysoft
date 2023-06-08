@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./contenido-card-usuario.component.css']
 })
 export class ContenidoCardUsuarioComponent {
-  estado:boolean = true;
-  textoEstado:string ="Activo";
-  cambiarEstado():void{
+
+  protected estado:boolean = true;
+  protected textoEstado:string ="Activo";
+
+  protected cambiarEstado():void{
     this.estado = !this.estado;
 
     if(this.estado){
@@ -17,5 +19,31 @@ export class ContenidoCardUsuarioComponent {
     else{
       this.textoEstado = "Inactivo";
     }
+  }
+
+  protected editar_collapsed:boolean = true;
+  protected ocultar_opciones:boolean = true;
+
+
+  mostrarBurbuja():void {
+    this.editar_collapsed = !this.editar_collapsed;
+    this.mostrarOpciones();
+  }
+  mostrarOpciones():void{
+    if (!this.editar_collapsed){
+      try{
+        setTimeout(() =>{
+            this.ocultar_opciones = !this.ocultar_opciones;
+          }, 800
+        );
+      }
+      catch (e) {
+        console.log(e);
+      }
+    }
+    else{
+      this.ocultar_opciones = !this.ocultar_opciones;
+    }
+
   }
 }
