@@ -2,10 +2,24 @@
   width: 80%;
   height: 5em;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   box-shadow: 0px 1px 0.5px rgba(110,48,131,1) ;
   position: absolute;
   left: 18.5em;
+}
+.beauty{
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 1.5em;
+}
+.beauty h1{
+  color: rgba(110,48,131,1);
+  font-weight: bold;
+  font-size: 2em;
+}
+.contenedor-interno{
+  display: flex;
 }
 
 .barra-busqueda{
@@ -64,4 +78,5 @@
   width: 3em;
   height: 3em;
   border-radius: 100%;
+  object-fit: cover;
 }
