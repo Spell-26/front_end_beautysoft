@@ -20,16 +20,16 @@
     <li class="categoriaMenu">RESUMEN Y REPORTES</li>
     <li class="accionesMenu"><span class="material-symbols-outlined">monitoring</span> <a href="">Dashboard</a></li>
     <li class="categoriaMenu">AGENDA</li>
-    <li class="accionesMenu"><span class="material-symbols-outlined">calendar_month</span> <a href="">Turnos</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">calendar_month</span> <a routerLink="admin/turnos" routerLinkActive="active">Turnos</a></li>
     <li class="accionesMenu"><span class="material-symbols-outlined">push_pin</span> <a href="">Citas</a></li>
     <li class="categoriaMenu">ADMINISTRAR PERSONAL</li>
     <li class="accionesMenu"><span class="material-symbols-outlined">content_cut</span> <a href="">Estilistas</a></li>
     <li class="accionesMenu"><span class="material-symbols-outlined">face_2</span> <a href="">Clientes</a></li>
-    <li class="accionesMenu"><span class="material-symbols-outlined">face_6</span> <a href="">Usuarios</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">face_6</span> <a routerLink="admin/usuarios" routerLinkActive="active">Usuarios</a></li>
     <li class="categoriaMenu">GESTIÓN</li>
     <li class="accionesMenu"><span class="material-symbols-outlined">payments</span> <a href="">Ventas</a></li>
     <li class="accionesMenu"><span class="material-symbols-outlined">store</span> <a href="">Servicios</a></li>
-    <li class="accionesMenu"><span class="material-symbols-outlined">work</span> <a href="">Roles</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">work</span> <a href="admin/roles">Roles</a></li>
     <li class="accionesMenu"><span class="material-symbols-outlined">settings</span> <a href="">Configuración</a></li>
   </ul>
   <footer id="pieMenu" [hidden]="ocultarMostrar" [ngClass]="{'contenedorAcciones': !logoClick, 'contenedorAccionesClick': logoClick}">
@@ -37,3 +37,6 @@
   </footer>
 
 </aside>
+<app-proximas-citas></app-proximas-citas>
+
+<router-outlet></router-outlet>
