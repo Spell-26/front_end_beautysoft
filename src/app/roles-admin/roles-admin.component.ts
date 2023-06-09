@@ -7,12 +7,5 @@ import {Router} from "@angular/router";
   styleUrls: ['./roles-admin.component.css']
 })
 export class RolesAdminComponent {
-  public ruta:string ="";
 
-  constructor(private router: Router) {
-  }
-
-  ngOnInit(){
-    this.ruta = this.router.url;
-  }
 }
