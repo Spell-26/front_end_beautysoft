@@ -14,6 +14,8 @@ import { UsuariosAdminComponent } from './usuarios-admin/usuarios-admin.componen
 import {RouterModule, Routes} from "@angular/router";
 import { RolesAdminComponent } from './roles-admin/roles-admin.component';
 import {FormsModule} from "@angular/forms";
+import { ModalAsignarServicioComponent } from './modal-asignar-servicio/modal-asignar-servicio.component';
+import { ServiciosAdminComponent } from './servicios-admin/servicios-admin.component';
 
 //router
 const appRoutes: Routes=[
@@ -21,7 +23,9 @@ const appRoutes: Routes=[
   //en component se pone el nombre del component tal y como aparace abajo en declarations
   {path:'admin/usuarios', component:UsuariosAdminComponent},
   //ruta a roles
-  {path:'admin/roles', component:RolesAdminComponent}
+  {path:'admin/roles', component:RolesAdminComponent},
+  //ruta a servicios
+  {path:'admin/servicios', component: ServiciosAdminComponent}
 ]
 
 @NgModule({
@@ -33,7 +37,9 @@ const appRoutes: Routes=[
     HeaderAdminComponent,
     ProximasCitasComponent,
     UsuariosAdminComponent,
-    RolesAdminComponent
+    RolesAdminComponent,
+    ModalAsignarServicioComponent,
+    ServiciosAdminComponent
   ],
   imports: [
     BrowserModule,
