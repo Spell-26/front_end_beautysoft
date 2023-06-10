@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
@@ -14,6 +13,7 @@ import { UsuariosAdminComponent } from './usuarios-admin/usuarios-admin.componen
 import {RouterModule, Routes} from "@angular/router";
 import { RolesAdminComponent } from './roles-admin/roles-admin.component';
 import {FormsModule} from "@angular/forms";
+import { ContenidoCardRolComponent } from './contenido-card-rol/contenido-card-rol.component';
 
 //router
 const appRoutes: Routes=[
@@ -33,7 +33,8 @@ const appRoutes: Routes=[
     HeaderAdminComponent,
     ProximasCitasComponent,
     UsuariosAdminComponent,
-    RolesAdminComponent
+    RolesAdminComponent,
+    ContenidoCardRolComponent
   ],
   imports: [
     BrowserModule,

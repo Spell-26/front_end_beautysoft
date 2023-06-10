@@ -9,27 +9,13 @@
     </div>
   </header>
   <div class="info-seccion">
-    <p>En esta sección podrás visualizar información relevante de tus usuarios,
-      como la fecha de su creación e información personal. Podrás crear usuarios nuevos o editar los ya existentes.</p>
-  </div>
-  <div class="card__profile">
-      <app-contenido-card-usuario></app-contenido-card-usuario>
-  </div>
-  <div class="card__profile">
-    <app-contenido-card-usuario></app-contenido-card-usuario>
-  </div>
-  <div class="card__profile">
-    <app-contenido-card-usuario></app-contenido-card-usuario>
-  </div>
-  <div class="card__profile">
-    <app-contenido-card-usuario></app-contenido-card-usuario>
-  </div>
-  <div class="card__profile">
-    <app-contenido-card-usuario></app-contenido-card-usuario>
-  </div>
-  <div class="card__profile">
-    <app-contenido-card-usuario></app-contenido-card-usuario>
+    <p>{{ayuda}}</p>
   </div>
 
+  
+  <div class="card__profile" [ngSwitch]="nombreSeccion">
+      <app-contenido-card-usuario *ngSwitchCase="'Usuarios'"></app-contenido-card-usuario>
+      <app-contenido-card-rol *ngSwitchCase="'Roles'"></app-contenido-card-rol>
+  </div>
 </section>
 
