@@ -12,8 +12,20 @@ import { ProximasCitasComponent } from './proximas-citas/proximas-citas.componen
 import { UsuariosAdminComponent } from './usuarios-admin/usuarios-admin.component';
 import {RouterModule, Routes} from "@angular/router";
 import { RolesAdminComponent } from './roles-admin/roles-admin.component';
-import {FormsModule} from "@angular/forms";
+
 import { ContenidoCardRolComponent } from './contenido-card-rol/contenido-card-rol.component';
+
+//librerias para los inputs
+
+import { MatInputModule } from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+  //librerias para el modal
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogCustomComponent } from './components/dialog-custom/dialog-custom.component';
+import { DialogWithTemplateComponent } from './components/dialog-with-template/dialog-with-template.component';
+import { ModalComponent } from './modal/modal.component'
+
 
 //router
 const appRoutes: Routes=[
@@ -22,6 +34,9 @@ const appRoutes: Routes=[
   {path:'admin/usuarios', component:UsuariosAdminComponent},
   //ruta a roles
   {path:'admin/roles', component:RolesAdminComponent}
+
+
+
 ]
 
 @NgModule({
@@ -34,7 +49,10 @@ const appRoutes: Routes=[
     ProximasCitasComponent,
     UsuariosAdminComponent,
     RolesAdminComponent,
-    ContenidoCardRolComponent
+    ContenidoCardRolComponent,
+    DialogCustomComponent,
+    DialogWithTemplateComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +60,15 @@ const appRoutes: Routes=[
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
+    //librerias para los formularios
+    MatInputModule,
+    ReactiveFormsModule,
+
     //inicializar el router
     RouterModule.forRoot(appRoutes),
+
+    //importacion para el modal
+    MatDialogModule
 
   ],
   providers: [],

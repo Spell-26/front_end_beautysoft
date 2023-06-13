@@ -1,18 +1,14 @@
 import { Component, TemplateRef } from '@angular/core';
-import { DialogService } from './service/dialog.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { DialogWithTemplateComponent } from './components/dialog-with-template/dialog-with-template.component';
-
-
+import { DialogService } from '../service/dialog.service';
+import { DialogWithTemplateComponent } from '../components/dialog-with-template/dialog-with-template.component';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css']
 })
-export class AppComponent {
-  title = 'Beautysoft';
-
+export class ModalComponent {
   private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = new FormGroup({
@@ -70,6 +66,7 @@ export class AppComponent {
 
     protected editar_collapsed:boolean = true;
   protected ocultar_opciones:boolean = true;
+
 
 
 }
