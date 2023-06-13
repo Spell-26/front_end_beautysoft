@@ -1,0 +1,33 @@
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div class="container-info">
+  <div id="estado">
+    <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+              <span>
+                  {{textoEstado}}
+              </span>
+    </div>
+    <div class="editar" (click)="mostrarBurbuja()">
+      <span class="material-symbols-outlined">
+        more_vert
+      </span>
+    </div>
+  </div>
+  <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
+    <div [hidden]="ocultar_opciones">
+      <div class="botonEditar">Editar</div>
+      <div class="botonEliminar" >Eliminar</div>
+    </div>
+  </div>
+  <img src="/assets/img/card_user.jpg" alt="">
+<div class="info-head">
+  <h2>Arianna Sermeño</h2>
+  <span>Cliente</span>
+</div>
+  <div class="card__datos">
+    <p>Fecha de creación: 02/06/2023</p>
+    <p>Télefono: 3507593569</p>
+    <p>Correo: arleycastaneda22@gmail.com</p>
+    <p>Dirección:Calle 108 #46 a 22</p>
+  </div>
+</div>
