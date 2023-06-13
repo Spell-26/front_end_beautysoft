@@ -13,7 +13,18 @@ import { UsuariosAdminComponent } from './usuarios-admin/usuarios-admin.componen
 import {RouterModule, Routes} from "@angular/router";
 import { RolesAdminComponent } from './roles-admin/roles-admin.component';
 
+
 import { ContenidoCardRolComponent } from './contenido-card-rol/contenido-card-rol.component';
+import { ServiciosAdminComponent } from './servicios-admin/servicios-admin.component';
+import { ContenidoCardServicioComponent } from './contenido-card-servicio/contenido-card-servicio.component';
+import { EstilistaAdminComponent } from './estilista-admin/estilista-admin.component';
+import { ContenidoCardEstilistaComponent } from './contenido-card-estilista/contenido-card-estilista.component';
+import { ClientesAdminComponent } from './clientes-admin/clientes-admin.component';
+import { ContenidoCardClientesComponent } from './contenido-card-clientes/contenido-card-clientes.component';
+import { TurnosAdminComponent } from './turnos-admin/turnos-admin.component';
+import { ContenidoCardTurnosComponent } from './contenido-card-turnos/contenido-card-turnos.component';
+import { CitasAdminComponent } from './citas-admin/citas-admin.component';
+import { ContenidoCardCitasComponent } from './contenido-card-citas/contenido-card-citas.component';
 
 //librerias para los inputs
 
@@ -27,13 +38,37 @@ import { DialogWithTemplateComponent } from './components/dialog-with-template/d
 import { ModalComponent } from './modal/modal.component'
 
 
+
+
+
+
+
+
+
+
 //router
 const appRoutes: Routes=[
   //ruta a usuarios
   //en component se pone el nombre del component tal y como aparace abajo en declarations
   {path:'admin/usuarios', component:UsuariosAdminComponent},
   //ruta a roles
+  {path:'admin/roles', component:RolesAdminComponent},
+
+  //ruta a servicios
+  {path:'admin/servicios', component: ServiciosAdminComponent},
+  //Ruta a Estilista
+  {path:'admin/estilista', component:EstilistaAdminComponent},
+  //Ruta a Clientes
+  {path:'admin/clientes', component:EstilistaAdminComponent},
+
+  //Ruta a turnos
+  {path:'admin/turnos', component:TurnosAdminComponent},
+  //Ruta a citas
+  {path:'admin/citas', component:CitasAdminComponent},
   {path:'admin/roles', component:RolesAdminComponent}
+
+
+
 
 
 
@@ -53,6 +88,20 @@ const appRoutes: Routes=[
     DialogCustomComponent,
     DialogWithTemplateComponent,
     ModalComponent,
+    ContenidoCardRolComponent,
+    ServiciosAdminComponent,
+    ContenidoCardServicioComponent,
+    EstilistaAdminComponent,
+    ContenidoCardEstilistaComponent,
+    ClientesAdminComponent,
+    ContenidoCardClientesComponent,
+    TurnosAdminComponent,
+    ContenidoCardTurnosComponent,
+    CitasAdminComponent,
+    ContenidoCardCitasComponent,
+    DialogCustomComponent,
+    DialogWithTemplateComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,11 +113,17 @@ const appRoutes: Routes=[
     MatInputModule,
     ReactiveFormsModule,
 
+    //librerias para los formularios
+    MatInputModule,
+    ReactiveFormsModule,
+
     //inicializar el router
     RouterModule.forRoot(appRoutes),
 
     //importacion para el modal
     MatDialogModule
+
+   
 
   ],
   providers: [],
