@@ -12,7 +12,7 @@ import { ProximasCitasComponent } from './proximas-citas/proximas-citas.componen
 import { UsuariosAdminComponent } from './usuarios-admin/usuarios-admin.component';
 import {RouterModule, Routes} from "@angular/router";
 import { RolesAdminComponent } from './roles-admin/roles-admin.component';
-import {FormsModule} from "@angular/forms";
+
 import { ContenidoCardRolComponent } from './contenido-card-rol/contenido-card-rol.component';
 import { ServiciosAdminComponent } from './servicios-admin/servicios-admin.component';
 import { ContenidoCardServicioComponent } from './contenido-card-servicio/contenido-card-servicio.component';
@@ -24,6 +24,18 @@ import { TurnosAdminComponent } from './turnos-admin/turnos-admin.component';
 import { ContenidoCardTurnosComponent } from './contenido-card-turnos/contenido-card-turnos.component';
 import { CitasAdminComponent } from './citas-admin/citas-admin.component';
 import { ContenidoCardCitasComponent } from './contenido-card-citas/contenido-card-citas.component';
+
+//librerias para los inputs
+
+import { MatInputModule } from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+  //librerias para el modal
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogCustomComponent } from './components/dialog-custom/dialog-custom.component';
+import { DialogWithTemplateComponent } from './components/dialog-with-template/dialog-with-template.component';
+import { ModalComponent } from './modal/modal.component'
+
 
 //router
 const appRoutes: Routes=[
@@ -43,7 +55,9 @@ const appRoutes: Routes=[
   //Ruta a turnos
   {path:'admin/turnos', component:TurnosAdminComponent},
   //Ruta a citas
-  {path:'admin/citas', component:CitasAdminComponent}
+  {path:'admin/citas', component:CitasAdminComponent},
+  {path:'admin/roles', component:RolesAdminComponent}
+
 
 
 ]
@@ -68,7 +82,10 @@ const appRoutes: Routes=[
     TurnosAdminComponent,
     ContenidoCardTurnosComponent,
     CitasAdminComponent,
-    ContenidoCardCitasComponent
+    ContenidoCardCitasComponent,
+    DialogCustomComponent,
+    DialogWithTemplateComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,8 +93,15 @@ const appRoutes: Routes=[
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
+    //librerias para los formularios
+    MatInputModule,
+    ReactiveFormsModule,
+
     //inicializar el router
     RouterModule.forRoot(appRoutes),
+
+    //importacion para el modal
+    MatDialogModule
 
   ],
   providers: [],
