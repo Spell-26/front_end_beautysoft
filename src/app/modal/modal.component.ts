@@ -3,11 +3,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogService } from '../service/dialog.service';
 import { DialogWithTemplateComponent } from '../components/dialog-with-template/dialog-with-template.component';
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
+
 export class ModalComponent {
   private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
@@ -47,6 +49,8 @@ export class ModalComponent {
     this.formGroup.reset()
     this.matDialogRef.close()
   }
+
+  //boton de estado
 
   protected estado:boolean = true;
   protected textoEstado:string ="Activo";
