@@ -1,5 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogService } from '../service/dialog.service';
 import { DialogWithTemplateComponent } from '../components/dialog-with-template/dialog-with-template.component';
@@ -9,68 +9,62 @@ import { DialogWithTemplateComponent } from '../components/dialog-with-template/
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-
 export class ModalComponent {
-  private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
+  matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
-  formGroup: FormGroup = new FormGroup({
-    name: new FormControl(),
-    lastname: new FormControl(),
-    Gmail: new FormControl(),
-    contraseña: new FormControl(),
-    ConfirmContraseña: new FormControl()
-  })
+  formGroup: FormGroup = this.formBuilder.group({
+    name: ['', Validators.required],
+    lastname: ['', Validators.required],
+    Gmail: ['', [Validators.required, Validators.email]],
+    contraseña: ['', Validators.required],
+    ConfirmContraseña: ['', Validators.required]
+  });
 
-  constructor(private dialogService:DialogService, ){}
+  constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}
 
-  openDialogCustom(){
+  openDialogCustom() {
     this.dialogService.openDialogCustom({
       title: 'Title 1',
       content: 'Content 1',
-    }).afterClosed().subscribe(res=> {
-      console.log('Dialog Custom Close', res)
-    this.formGroup.reset();
+    }).afterClosed().subscribe(res => {
+      console.log('Dialog Custom Close', res);
+      this.formGroup.reset();
+    });
+  }
+
+  openDialogWithTemplate(template: TemplateRef<any>) {
+    this.matDialogRef = this.dialogService.openDialogWithTemplate({ template });
+    this.matDialogRef.afterClosed().subscribe(res => {
+      console.log('Dialog with template Close', res);
+      this.formGroup.reset();
     });
   }
 
 
-  openDialogWithTemplate(template: TemplateRef<any>){
-    this.matDialogRef = this.dialogService.openDialogWithTemplate({
-      template,})
-      this.matDialogRef
-    .afterClosed().subscribe(res => {
-      console.log('Dialog with template Close', res)
+  onSave() {
+    if (this.formGroup.valid) {
+      console.log(this.formGroup.value);
       this.formGroup.reset();
-    })
+      this.matDialogRef.close();
+    } else {
+      // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
+      //utilizar libreria snackbar para mostrar un error en un tiempo definido
+    }
   }
 
-  onSave(){
-    console.log(this.formGroup.value);
-    this.formGroup.reset()
-    this.matDialogRef.close()
-  }
+  estado = true;
+  textoEstado = 'Activo';
 
-  //boton de estado
-
-  protected estado:boolean = true;
-  protected textoEstado:string ="Activo";
-
-  protected cambiarEstado():void{
+  cambiarEstado(): void {
     this.estado = !this.estado;
 
-    if(this.estado){
-      this.textoEstado = "Activo";
-    }
-    else{
-      this.textoEstado = "Inactivo";
+    if (this.estado) {
+      this.textoEstado = 'Activo';
+    } else {
+      this.textoEstado = 'Inactivo';
     }
   }
 
-
-
-    protected editar_collapsed:boolean = true;
-  protected ocultar_opciones:boolean = true;
-
-
-
+  editar_collapsed = true;
+  ocultar_opciones = true;
 }
