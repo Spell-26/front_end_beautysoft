@@ -13,6 +13,10 @@ import { UsuariosAdminComponent } from './usuarios-admin/usuarios-admin.componen
 import {RouterModule, Routes} from "@angular/router";
 import { RolesAdminComponent } from './roles-admin/roles-admin.component';
 
+//check box
+import { MatCheckboxModule } from '@angular/material/checkbox'
+
+
 
 import { ContenidoCardRolComponent } from './contenido-card-rol/contenido-card-rol.component';
 import { ServiciosAdminComponent } from './servicios-admin/servicios-admin.component';
@@ -35,7 +39,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogCustomComponent } from './components/dialog-custom/dialog-custom.component';
 import { DialogWithTemplateComponent } from './components/dialog-with-template/dialog-with-template.component';
-import { ModalComponent } from './modal/modal.component'
+import { ModalComponent } from './modal/modal.component';
+import { RolComponent } from './modal/rol/rol.component'
 
 
 
@@ -102,6 +107,7 @@ const appRoutes: Routes=[
     DialogCustomComponent,
     DialogWithTemplateComponent,
     ModalComponent,
+    RolComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,6 +118,8 @@ const appRoutes: Routes=[
     //librerias para los formularios
     MatInputModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
+
 
     //librerias para los formularios
     MatInputModule,
@@ -123,7 +131,7 @@ const appRoutes: Routes=[
     //importacion para el modal
     MatDialogModule
 
-   
+
 
   ],
   providers: [],

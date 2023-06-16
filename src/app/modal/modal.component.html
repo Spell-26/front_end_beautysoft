@@ -1,4 +1,4 @@
-<button class="nuevo-usuario" (click)="openDialogWithTemplate(template2)">Nuevo Usuarios</button>
+<button class="nuevo-usuario-btn" (click)="openDialogWithTemplate(template2)">Nuevo Usuarios</button>
 
 <ng-template #template2>
   <h1 mat-dialog-title class="header-modal">Ingresar Usuarios<hr></h1>
@@ -42,7 +42,7 @@
       </mat-form-field>
 
       <div>
-        <p style="font-weight: bold;">Estado: </p>
+        <p style="font-weight: bold; margin-right: 200px;">Estado: </p>
         <div id="estado">
           <div style="margin-right: 200px;" (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
             <span>
