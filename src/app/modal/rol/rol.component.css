@@ -3,7 +3,7 @@
 }
 
 /* boton d despliegue */
-.nuevo-usuario-btn{
+.nuevo-rol{
   position: absolute;
   left: 820px;
   top: 25px;
@@ -22,30 +22,14 @@
 
 }
 
-.nuevo-usuario-btn:hover{
+.nuevo-rol:hover{
   background-color: #ef950c;
 }
 
 
 /* formularios */
 
-.nombre{
-  width: 40%;
-}
-
-.apellido{
-  width: 40%;
-  margin-left: 20px;
-}
-
-.contraseña-form{
-  width: 100%;
-}
-.confirmar-form{
-  width: 100%;
-}
-
-.email-form{
+.nombre-rol{
   width: 100%;
 }
 
@@ -66,6 +50,9 @@
 
 
 /* ajustes del boton de activo e inactivo */
+.texto-estado{
+margin-left: 60px;
+}
 
 #estado{
   background-color: #ffffff00;
@@ -74,8 +61,10 @@
   display: flex;
   justify-content: center;
   user-select: none;
-  margin-right: 200px;
+  /* margin-right: 200px; */
+  margin-left: 70px;
 }
+
 .estado-hijo{
   width: 30%;
   height: 1.5em;
@@ -155,7 +144,7 @@
 /* tamaño del modal */
 
 .custom-dialog-content {
-  width: 500px; /* Ajusta el ancho según tus necesidades */
+  width: 100%; /* Ajusta el ancho según tus necesidades */
   height: 300px; /* Ajusta la altura según tus necesidades */
 }
 
@@ -164,5 +153,19 @@
   width: 365px;
   margin-left: 60px;
   text-align: justify;
+
+}
+
+
+/* .checkbox-container{
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  width: 100%;
+
+} */
+
+.check-citas{
+  width: 100%;
 
 }
