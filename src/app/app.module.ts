@@ -107,6 +107,7 @@ const appRoutes: Routes=[
     DialogWithTemplateComponent,
     ModalComponent,
     RolComponent,
+    ContenidoCardServicioComponent,
   ],
   imports: [
     BrowserModule,

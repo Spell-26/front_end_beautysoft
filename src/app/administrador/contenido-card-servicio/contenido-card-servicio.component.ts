@@ -7,6 +7,6 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './contenido-card-servicio.component.html',
   styleUrls: ['./contenido-card-servicio.component.css']
 })
-export class ContenidoCardServicioComponent {
+export class ContenidoCardServicioComponent{
 
 }
