@@ -40,7 +40,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogCustomComponent } from './components/dialog-custom/dialog-custom.component';
 import { DialogWithTemplateComponent } from './components/dialog-with-template/dialog-with-template.component';
 import { ModalComponent } from './modal/modal.component';
-import { RolComponent } from './modal/rol/rol.component'
+import { RolComponent } from './modal/rol/rol.component';
+import { ClientesComponent } from './modal/clientes/clientes.component';
+import { EstilistaComponent } from './modal/estilista/estilista.component'
 
 
 
@@ -108,6 +110,8 @@ const appRoutes: Routes=[
     ModalComponent,
     RolComponent,
     ContenidoCardServicioComponent,
+    ClientesComponent,
+    EstilistaComponent,
   ],
   imports: [
     BrowserModule,

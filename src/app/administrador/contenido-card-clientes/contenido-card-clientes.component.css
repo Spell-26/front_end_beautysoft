@@ -1,125 +1,255 @@
 .container-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  .settings-content-collapsed{
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0);
-    left: 16em;
-    top: 3em;
-    width: 1em;
-    height: 1em;
-    border-radius: 10px;
-    transition: width 0.8s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 1s ease;
-  }
-  
-  .settings-content{
-    position: absolute;
-    background-color: #fff;
-    left: 12.5em;
-    top: 3em;
-    width: 8em;
-    height: 8.5em;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    transition: width 0.9s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 0.01s ease;
-  }
-  .settings-content:before{
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    border-color: transparent transparent #fff transparent;
-  }
-  .botonEditar, .botonEliminar {
-    padding: 0.8em;
-    margin-top: 0.8em;
-    width: 100%;
-    cursor: pointer;
-    background-image: linear-gradient(180deg, #fff, #fff);
-    transition: background-image 0.5s ease;
-  }
-  .botonEditar:hover, .botonEliminar:hover{
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(116,51,127,1) 50%, rgba(255,255,255,1) 100%);  color: #fff;
-  }
-  .editar{
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .container-info img{
-    width: 8em;
-    height: 8em;
-    border-radius: 100%;
-    object-fit: cover;
-    margin-top: 1em;
-  }
-  
-  .card__datos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  
-  
-  #estado{
-    background-color: #ffffff00;
-    width: 100%;
-    height: 2em;
-    display: flex;
-    justify-content: end;
-    user-select: none;
-  }
-  .estado-hijo{
-    width: 30%;
-    height: 1.5em;
-    border-radius: 10px;
-    border: 2px solid green;
-    margin: 0.2em 0.5em 0 0;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .estado-hijo span{
-    padding: 0.5em;
-    color: green;
-  }
-  .estado-hijo-click{
-    width: 30%;
-    height: 1.5em;
-    border-radius: 10px;
-    border: 2px solid orangered;
-    margin: 0.2em 0.5em 0 0;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .estado-hijo-click span{
-    padding: 0.5em;
-    color: orangered;
-  }
-  .info-head{
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    margin-bottom: 0.5em;
-  }
-  .info-head h2, .info-head span{
-    display: inline-block;
-    width: 100%;
-  
-  }
-  .info-head h2{
-    margin: 0.5em 0 0 0;
-  }
-  
-  
-  
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.settings-content-collapsed{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  left: 16em;
+  top: 3em;
+  width: 1em;
+  height: 1em;
+  border-radius: 10px;
+  transition: width 0.8s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 1s ease;
+}
+
+.settings-content{
+  position: absolute;
+  background-color: #fff;
+  left: 12.5em;
+  top: 3em;
+  width: 8em;
+  height: 8.5em;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: width 0.9s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 0.01s ease;
+}
+.settings-content:before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+}
+.botonEditar, .botonEliminar {
+  padding: 0.8em;
+  margin-top: 0.8em;
+  width: 100%;
+  cursor: pointer;
+  background-image: linear-gradient(180deg, #fff, #fff);
+  transition: background-image 0.5s ease;
+}
+.botonEditar:hover, .botonEliminar:hover{
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(116,51,127,1) 50%, rgba(255,255,255,1) 100%);  color: #fff;
+}
+.editar{
+  cursor: pointer;
+  user-select: none;
+}
+
+.container-info img{
+  width: 8em;
+  height: 8em;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-top: 1em;
+}
+
+.card__datos{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+#estado{
+  background-color: #ffffff00;
+  width: 100%;
+  height: 2em;
+  display: flex;
+  justify-content: end;
+  user-select: none;
+}
+.estado-hijo{
+  width: 30%;
+  height: 1.5em;
+  border-radius: 10px;
+  border: 2px solid green;
+  margin: 0.2em 0.5em 0 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.estado-hijo span{
+  padding: 0.5em;
+  color: green;
+}
+.estado-hijo-click{
+  width: 30%;
+  height: 1.5em;
+  border-radius: 10px;
+  border: 2px solid orangered;
+  margin: 0.2em 0.5em 0 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.estado-hijo-click span{
+  padding: 0.5em;
+  color: orangered;
+}
+.info-head{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 0.5em;
+}
+.info-head h2, .info-head span{
+  display: inline-block;
+  width: 100%;
+
+}
+.info-head h2{
+  margin: 0.5em 0 0 0;
+}
+
+
+
+.email-form{
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* texto de la cabecera del modal */
+.header-modal{
+  text-align: center;
+}
+
+/* texto de informacion */
+.info{
+  background-color: #6BCEE3;
+  border-radius: 15px;
+  text-align: center;
+  width: 80%;
+  color:#5305FA;
+  margin: 0 100px 0 40px;
+}
+
+
+.info-head{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 15px;
+}
+
+
+/* botones de guardar y cancelar */
+.Botones{
+  display: flex;
+  justify-content: space-around;
+  margin-top: -42px;
+}
+
+.Botones-eliminar{
+  display: flex;
+  justify-content: space-around;
+  margin-top: -230px;
+}
+
+
+
+.crear{
+  width: 100px;
+  height: 40px;
+  background-color: #74337F;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+
+}
+.crear:hover{
+  background: #56245f;
+
+}
+
+.cancelar:hover{
+  background: #7a0101 ;
+
+}
+
+
+.cancelar{
+  width: 100px;
+  height: 40px;
+  background-color: red;
+  border-radius: 8px;
+  color: white;
+  margin: 10px 30px 10px 10px;
+  border: none;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+}
+
+/* tamaño del modal */
+
+.custom-dialog-content {
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+  height: 300px; /* Ajusta la altura según tus necesidades */
+}
+
+
+.texto-politicas{
+  width: 365px;
+  margin-left: 100px;
+  text-align: justify;
+
+}
+
+.boton-estado{
+  margin-top: 30px;
+}
+
+
+.caja-estado{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+
+
+
+/* boton nuevo */
+
+.nuevo-usuario{
+  position: absolute;
+  left: 1040px;
+  top: 80px;
+  width: 180px;
+  background-color: #F9AD1A;
+  /* margin: 0 5em 0 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+  padding: 0.85em;
+  color: white;
+  border: none;
+
+}
+
+.nuevo-usuario:hover{
+  background-color: #ef950c;
+}

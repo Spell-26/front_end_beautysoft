@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
+import { DialogService } from 'src/app/service/dialog.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -7,6 +11,43 @@ import { Component } from '@angular/core';
   styleUrls: ['./contenido-card-estilista.component.css']
 })
 export class ContenidoCardEstilistaComponent {
+
+   //editar boton
+
+ private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
+
+
+ formGroup: FormGroup = this.formBuilder.group({
+  Gmail:['',Validators.email]
+
+ });
+ constructor(private dialogService:DialogService,  private formBuilder: FormBuilder ){}
+
+ openDialogCustom(){
+   this.dialogService.openDialogCustom({
+     title: ' ¿Estas seguro de eliminar este usuario?',
+     content: 'Al eliminar este usuario su informacion será eliminda permanentemente ¿Deseas Continuar?',
+   }).afterClosed().subscribe(res=> {
+     console.log('Dialog Custom Close', res)
+   this.formGroup.reset();
+   });
+ }
+
+ openDialogWithTemplate(template: TemplateRef<any>){
+   this.matDialogRef = this.dialogService.openDialogWithTemplate({
+     template,})
+     this.matDialogRef
+   .afterClosed().subscribe(res => {
+     console.log('Dialog with template Close', res)
+     this.formGroup.reset();
+   })
+ }
+
+ onSave(){
+   console.log(this.formGroup.value);
+   this.formGroup.reset()
+   this.matDialogRef.close()
+ }
   protected estado:boolean = true;
   protected textoEstado:string ="Activo";
 
