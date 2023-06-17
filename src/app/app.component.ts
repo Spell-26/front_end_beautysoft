@@ -52,22 +52,4 @@ export class AppComponent {
     this.matDialogRef.close()
   }
 
-  protected estado:boolean = true;
-  protected textoEstado:string ="Activo";
-
-  protected cambiarEstado():void{
-    this.estado = !this.estado;
-
-    if(this.estado){
-      this.textoEstado = "Activo";
-    }
-    else{
-      this.textoEstado = "Inactivo";
-    }
-  }
-
-
-
-    protected editar_collapsed:boolean = true;
-  protected ocultar_opciones:boolean = true;
 }
