@@ -70,6 +70,4 @@ export class AppComponent {
 
     protected editar_collapsed:boolean = true;
   protected ocultar_opciones:boolean = true;
-
-
 }
