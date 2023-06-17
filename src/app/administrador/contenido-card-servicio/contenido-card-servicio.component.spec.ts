@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, TemplateRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+
 
 import { ContenidoCardServicioComponent } from './contenido-card-servicio.component';
 
@@ -19,3 +23,5 @@ describe('ContenidoCardServicioComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

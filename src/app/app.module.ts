@@ -2,33 +2,33 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+import { MenuLateralComponent } from './administrador/menu-lateral/menu-lateral.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-import { CardComponent } from './card/card.component';
-import { ContenidoCardUsuarioComponent } from './contenido-card-usuario/contenido-card-usuario.component';
-import { HeaderAdminComponent } from './header-admin/header-admin.component';
-import { ProximasCitasComponent } from './proximas-citas/proximas-citas.component';
-import { UsuariosAdminComponent } from './usuarios-admin/usuarios-admin.component';
+import { CardComponent } from './administrador/card/card.component';
+import { ContenidoCardUsuarioComponent } from './administrador/contenido-card-usuario/contenido-card-usuario.component';
+import { HeaderAdminComponent } from './administrador/header-admin/header-admin.component';
+import { ProximasCitasComponent } from './administrador/proximas-citas/proximas-citas.component';
+import { UsuariosAdminComponent } from './administrador/usuarios-admin/usuarios-admin.component';
 import {RouterModule, Routes} from "@angular/router";
-import { RolesAdminComponent } from './roles-admin/roles-admin.component';
+import { RolesAdminComponent } from './administrador/roles-admin/roles-admin.component';
 
 //check box
 import { MatCheckboxModule } from '@angular/material/checkbox'
 
 
 
-import { ContenidoCardRolComponent } from './contenido-card-rol/contenido-card-rol.component';
-import { ServiciosAdminComponent } from './servicios-admin/servicios-admin.component';
-import { ContenidoCardServicioComponent } from './contenido-card-servicio/contenido-card-servicio.component';
-import { EstilistaAdminComponent } from './estilista-admin/estilista-admin.component';
-import { ContenidoCardEstilistaComponent } from './contenido-card-estilista/contenido-card-estilista.component';
-import { ClientesAdminComponent } from './clientes-admin/clientes-admin.component';
-import { ContenidoCardClientesComponent } from './contenido-card-clientes/contenido-card-clientes.component';
-import { TurnosAdminComponent } from './turnos-admin/turnos-admin.component';
-import { ContenidoCardTurnosComponent } from './contenido-card-turnos/contenido-card-turnos.component';
-import { CitasAdminComponent } from './citas-admin/citas-admin.component';
-import { ContenidoCardCitasComponent } from './contenido-card-citas/contenido-card-citas.component';
+import { ContenidoCardRolComponent } from './administrador/contenido-card-rol/contenido-card-rol.component';
+import { ServiciosAdminComponent } from './administrador/servicios-admin/servicios-admin.component';
+import { ContenidoCardServicioComponent } from './administrador/contenido-card-servicio/contenido-card-servicio.component';
+import { EstilistaAdminComponent } from './administrador/estilista-admin/estilista-admin.component';
+import { ContenidoCardEstilistaComponent } from './administrador/contenido-card-estilista/contenido-card-estilista.component';
+import { ClientesAdminComponent } from './administrador/clientes-admin/clientes-admin.component';
+import { ContenidoCardClientesComponent } from './administrador/contenido-card-clientes/contenido-card-clientes.component';
+import { TurnosAdminComponent } from './administrador/turnos-admin/turnos-admin.component';
+import { ContenidoCardTurnosComponent } from './administrador/contenido-card-turnos/contenido-card-turnos.component';
+import { CitasAdminComponent } from './administrador/citas-admin/citas-admin.component';
+import { ContenidoCardCitasComponent } from './administrador/contenido-card-citas/contenido-card-citas.component';
 
 //librerias para los inputs
 
@@ -95,7 +95,6 @@ const appRoutes: Routes=[
     ModalComponent,
     ContenidoCardRolComponent,
     ServiciosAdminComponent,
-    ContenidoCardServicioComponent,
     EstilistaAdminComponent,
     ContenidoCardEstilistaComponent,
     ClientesAdminComponent,

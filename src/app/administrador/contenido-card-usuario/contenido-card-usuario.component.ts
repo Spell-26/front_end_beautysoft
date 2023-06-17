@@ -1,8 +1,10 @@
 import { Component, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { DialogService} from '../service/dialog.service';
-import { DialogWithTemplateComponent } from '../components/dialog-with-template/dialog-with-template.component';
+import { DialogService } from 'src/app/service/dialog.service';
+import { DialogWithTamplateData } from 'src/app/models/dialog-with-tamplate-data.model';
+import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
+import { AppModule } from 'src/app/app.module';
 
 
 @Component({
