@@ -4,7 +4,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { DialogService } from 'src/app/service/dialog.service';
 import { DialogWithTamplateData } from 'src/app/models/dialog-with-tamplate-data.model';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
-import { AppModule } from 'src/app/app.module';
 
 
 @Component({

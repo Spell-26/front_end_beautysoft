@@ -14,8 +14,8 @@
     </div>
     <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
       <div [hidden]="ocultar_opciones">
-        <div class="botonEditar">Editar</div>
-        <div class="botonEliminar" >Eliminar</div>
+        <div class="botonEditar" (click)="openDialogWithTemplate(template2)" >Editar</div>
+        <div (click)="openDialogWithTemplate(template3)" class="botonEliminar">Eliminar</div>
       </div>
     </div>
     <img src="/assets/img/card_user.jpg" alt="">
@@ -34,4 +34,52 @@
 
   <app-rol></app-rol>
 
-  <!-- Borrar de aquí para abajo -->
+<!-- template para eliminar -->
+
+
+<ng-template #template3>
+
+  <h1 mat-dialog-title class="header-modal">¿Estas seguro de eliminar este usuario?<hr></h1>
+
+<div mat-dialog-content class="custom-dialog-content">
+    <p style="font-weight: bold;">Al eliminar este usuario su informacion será eliminda permanentemente ¿Deseas Continuar?</p>
+</div>
+
+<div class="Botones-eliminar" mat-dialog-actions>
+    <button class="crear" mat-button (click)="onSave()" >Continuar</button>
+    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+</div>
+
+</ng-template>
+
+
+<!-- contenido del template editar -->
+
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Editar Rol<hr></h1>
+
+  <p class="info">En esta ventana podrás editar un rol ya existente y asignarle acceso especifico a distintos modulos</p>
+
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="formGroup">
+      <mat-form-field class="nombre-rol">
+        <input matInput class="nombre-rol" placeholder="Nombre de Rol" formControlName="rolName">
+      </mat-form-field>
+<div class="container-check">
+      <div class="checkbox-container">
+        <p>Permisos: </p>
+        <mat-checkbox class = "check-citas"  formControlName="checkbox1">Modulo Citas</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox2">Modulo Cliente</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox3">Modulo Estilitas</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox4">Modulo Ventas</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox5">Modulo Servicios</mat-checkbox>
+      </div>
+    </div>
+    </form>
+    <div class="Botones" mat-dialog-actions>
+      <button class="crear" mat-button (click)="onSave()">Guardar</button>
+      <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+  </div>
+  </div>
+</ng-template>
