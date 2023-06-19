@@ -1,0 +1,38 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {AdministradorComponent} from "./administrador.component";
+import {ClientesAdminComponent, UsuariosAdminComponent} from "./components";
+import {RolesAdminComponent} from "./components";
+import {ServiciosAdminComponent} from "./components";
+import {EstilistaAdminComponent} from "./components";
+import {TurnosAdminComponent} from "./components";
+import {CitasAdminComponent} from "./components";
+
+//router
+const routes: Routes=[
+  {path:'', component: AdministradorComponent},
+  //ruta a usuarios
+  //en component se pone el nombre del component tal y como aparace abajo en declarations
+  {path:'usuarios', component:UsuariosAdminComponent},
+  //ruta a roles
+  {path:'roles', component:RolesAdminComponent},
+  //ruta a servicios
+  {path:'servicios', component: ServiciosAdminComponent},
+  //Ruta a Estilista
+  {path:'estilista', component:EstilistaAdminComponent},
+  //Ruta a Clientes
+  {path:'clientes', component:ClientesAdminComponent},
+  //Ruta a turnos
+  {path:'turnos', component:TurnosAdminComponent},
+  //Ruta a citas
+  {path:'citas', component:CitasAdminComponent},
+
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class AdministradorRoutingModule{ }
+
+

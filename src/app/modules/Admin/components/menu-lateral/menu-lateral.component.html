@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<aside id="cuerpoMenu" [ngClass]="{'menu': !redimesionar, 'menuClick': redimesionar}">
+ <header [ngClass]="{'cabezeraMenu':!redimesionar, 'cabeceraMenuClick': redimesionar}">
+   <img src="../../../../../assets/img/logo_beautysoft.png" alt="" (click)="expandirContraerLogo()" [ngClass]="{'logoMenu': !redimesionar, 'logoMenuClick': redimesionar}">
+   <span id="tituloMenu" [hidden]="ocultarMostrar" [ngClass]="{'contenedorAcciones': !logoClick, 'contenedorAccionesClick': logoClick}">BeautySoft</span>
+ </header>
+  <ul id="redireccionesMenu" [hidden]="ocultarMostrar" [ngClass]="{'contenedorAcciones': !logoClick, 'contenedorAccionesClick': logoClick}">
+    <li class="categoriaMenu">RESUMEN Y REPORTES</li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">monitoring</span> <a (click)="goHome()">Dashboard</a></li>
+    <li class="categoriaMenu">AGENDA</li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">calendar_month</span> <a (click)="goTurnos()">Turnos</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">push_pin</span> <a (click)="goCitas()">Citas</a></li>
+    <li class="categoriaMenu">ADMINISTRAR PERSONAL</li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">content_cut</span> <a (click)="goEstilistas()">Estilistas</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">face_2</span> <a (click)="goClientes()">Clientes</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">face_6</span> <a (click)="goUsuarios()">Usuarios</a></li>
+    <li class="categoriaMenu">GESTIÓN</li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">payments</span> <a >Ventas</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">store</span> <a (click)="goServicios()">Servicios</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">work</span> <a (click)="goRoles()">Roles</a></li>
+    <li class="accionesMenu"><span class="material-symbols-outlined">settings</span> <a href="">Configuración</a></li>
+  </ul>
+  <footer id="pieMenu" [hidden]="ocultarMostrar" [ngClass]="{'contenedorAcciones': !logoClick, 'contenedorAccionesClick': logoClick}">
+    <span class="copyright">BeautySoft ©</span>
+  </footer>
+
+</aside>
+<app-proximas-citas></app-proximas-citas>
+

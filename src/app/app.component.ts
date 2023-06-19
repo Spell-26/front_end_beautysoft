@@ -52,7 +52,4 @@ export class AppComponent {
     this.matDialogRef.close()
   }
 
-
-
-
 }
