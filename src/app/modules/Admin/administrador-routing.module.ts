@@ -7,11 +7,13 @@ import {ServiciosAdminComponent} from "./components";
 import {EstilistaAdminComponent} from "./components";
 import {TurnosAdminComponent} from "./components";
 import {CitasAdminComponent} from "./components";
+import { LoginComponent } from './login/login.component';
 
 //router
 const routes: Routes=[
   {path:'', component: AdministradorComponent},
   //ruta a usuarios
+  {path: 'login', component: LoginComponent},
   //en component se pone el nombre del component tal y como aparace abajo en declarations
   {path:'usuarios', component:UsuariosAdminComponent},
   //ruta a roles

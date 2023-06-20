@@ -7,7 +7,7 @@ import { DialogWithTemplateComponent } from '../components/dialog-with-template/
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent {
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;

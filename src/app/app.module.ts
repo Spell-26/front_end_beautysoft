@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { CardComponent } from './modules/Admin/components';
@@ -24,6 +28,9 @@ import { ContenidoCardTurnosComponent } from './modules/Admin/components/conteni
 import { CitasAdminComponent } from './modules/Admin/components/citas-admin/citas-admin.component';
 import { ContenidoCardCitasComponent } from './modules/Admin/components/contenido-card-citas/contenido-card-citas.component';
 
+//librerias para el dropdown de header
+
+
 //librerias para los inputs
 
 import { MatInputModule } from '@angular/material/input';
@@ -38,6 +45,9 @@ import { RolComponent } from './modal/rol/rol.component';
 import { ClientesComponent } from './modal/clientes/clientes.component';
 import { EstilistaComponent } from './modal/estilista/estilista.component'
 import {MenuLateralComponent} from "./modules/Admin/components/menu-lateral/menu-lateral.component";
+
+
+import { LoginComponent } from './modules/Admin/login/login.component';
 
 
 
@@ -81,6 +91,8 @@ import {MenuLateralComponent} from "./modules/Admin/components/menu-lateral/menu
     MatInputModule,
     ReactiveFormsModule,
     MatCheckboxModule,
+    MatSnackBarModule,
+    MatCardModule,
 
 
     //librerias para los formularios
