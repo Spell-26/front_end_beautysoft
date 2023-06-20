@@ -1,0 +1,24 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  width: 1366px;
+  height: 100%;
+}
+
+.container app-menu-lateral-estilista{
+  width: 25%;
+  height: 100%;
+
+}
+
+.container app-recordatorios-estilista{
+  width: 25%;
+  height: 100%;
+
+}
+
+.container app-container-central-estilista{
+  width: 50%;
+  height: 100%;
+
+}
