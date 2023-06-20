@@ -47,8 +47,6 @@ import { EstilistaComponent } from './modal/estilista/estilista.component'
 import {MenuLateralComponent} from "./modules/Admin/components/menu-lateral/menu-lateral.component";
 
 
-import { LoginComponent } from './modules/Admin/login/login.component';
-
 
 
 @NgModule({
@@ -80,6 +78,7 @@ import { LoginComponent } from './modules/Admin/login/login.component';
     ContenidoCardServicioComponent,
     ClientesComponent,
     EstilistaComponent,
+
   ],
   imports: [
     BrowserModule,
