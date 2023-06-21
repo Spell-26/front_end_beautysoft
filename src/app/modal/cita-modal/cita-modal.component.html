@@ -1,0 +1,37 @@
+
+<button class="nuevo-usuario-btn" (click)="openDialogWithTemplate(template2)">Nueva cita</button>
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Crear una nueva cita<hr></h1>
+ <div class="info">
+  <p>En esta ventana podrás crear una nueva cita</p>
+ </div>
+
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="formGroup">
+      <div class="select">
+        <select class="dropdown" name="" id="">
+          <option value="" selected disabled>Servicio</option>
+          <option value="" >Corte de cabello</option>
+          <option value="" >Cepillado de cabello</option>
+        </select>
+        <input type="text" placeholder="Fecha" onfocus="(this.type='date')" name="" id=""><br>
+        <input type="text" placeholder="Hora" onfocus="(this.type='time')" name="" id="">
+      </div>
+    <div>
+        <p style="font-weight: bold; margin-right: 200px; margin-top: 10px;">Estado: </p>
+        <div id="estado">
+          <div style="margin-right: 200px;" (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+            <span>
+              {{textoEstado}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="Botones" mat-dialog-actions>
+    <button class="crear" mat-button (click)="onSave()">Crear cita</button>
+    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+
+
