@@ -17,11 +17,7 @@ export class ContenidoCardRolComponent {
   private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = new FormGroup({
-    name: new FormControl(),
-    lastname: new FormControl(),
-    Gmail: new FormControl(),
-    contraseña: new FormControl(),
-    ConfirmContraseña: new FormControl()
+    rolName: new FormControl(),
   })
 
   constructor(private dialogService:DialogService, ){}
