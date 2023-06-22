@@ -8,6 +8,9 @@ import {EstilistaAdminComponent} from "./components";
 import {TurnosAdminComponent} from "./components";
 import {CitasAdminComponent} from "./components";
 import { LoginComponent } from './login/login.component';
+import { ServicioPorEstilistaAdminComponent } from './components/servicio-por-estilista-admin/servicio-por-estilista-admin.component';
+import { DisponibilidadAdminComponent } from './components/disponibilidad-admin/disponibilidad-admin.component';
+
 
 //router
 const routes: Routes=[
@@ -28,6 +31,12 @@ const routes: Routes=[
   {path:'turnos', component:TurnosAdminComponent},
   //Ruta a citas
   {path:'citas', component:CitasAdminComponent},
+
+  //Ruta servicios por estilista
+  {path:'servicioPorEstilista', component:ServicioPorEstilistaAdminComponent},
+
+  //Ruta a disponibilidad
+  {path: 'disponibilidad', component: DisponibilidadAdminComponent}
 
 ];
 

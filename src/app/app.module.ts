@@ -1,3 +1,5 @@
+import { DisponibilidadAdminComponent } from './modules/Admin/components/disponibilidad-admin/disponibilidad-admin.component';
+import { ServicioPorEstilistaAdminComponent } from './modules/Admin/components/servicio-por-estilista-admin/servicio-por-estilista-admin.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,6 +47,13 @@ import { RolComponent } from './modal/rol/rol.component';
 import { ClientesComponent } from './modal/clientes/clientes.component';
 import { EstilistaComponent } from './modal/estilista/estilista.component'
 import {MenuLateralComponent} from "./modules/Admin/components/menu-lateral/menu-lateral.component";
+import { BtnServicioPorEstilistaComponent } from './modules/Admin/components/btn-servicio-por-estilista/btn-servicio-por-estilista.component';
+import { ContenidoServicioPorEstilistaComponent } from './modules/Admin/components/contenido-servicio-por-estilista/contenido-servicio-por-estilista.component';
+import { ServicioPorEstilistaComponent } from './modal/servicio-por-estilista/servicio-por-estilista.component';
+import { TurnosComponent } from './modal/turnos/turnos.component';
+import { ContenidoCardDisponiblidadComponent } from './modules/Admin/components/contenido-card-disponiblidad/contenido-card-disponiblidad.component';
+import { DisponibilidadesModalComponent } from './modal/disponibilidades-modal/disponibilidades-modal.component';
+import { CitaModalComponent } from './modal/cita-modal/cita-modal.component';
 
 
 
@@ -78,6 +87,16 @@ import {MenuLateralComponent} from "./modules/Admin/components/menu-lateral/menu
     ContenidoCardServicioComponent,
     ClientesComponent,
     EstilistaComponent,
+    BtnServicioPorEstilistaComponent,
+    ServicioPorEstilistaAdminComponent,
+    ContenidoServicioPorEstilistaComponent,
+    ServicioPorEstilistaComponent,
+    TurnosComponent,
+    DisponibilidadAdminComponent,
+    ContenidoCardDisponiblidadComponent,
+    DisponibilidadesModalComponent,
+    CitaModalComponent
+
 
   ],
   imports: [

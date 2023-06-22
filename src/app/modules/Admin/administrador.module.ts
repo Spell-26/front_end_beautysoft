@@ -5,6 +5,7 @@ import {AdministradorRoutingModule} from "./administrador-routing.module";
 import {MenuLateralComponent, ProximasCitasComponent} from "./components";
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
   declarations: [
     AdministradorComponent,

@@ -52,7 +52,15 @@ export class CardComponent {
         this.nombreSeccion="Citas"
         this.ayuda="En esta página podrás ver información actualizada sobre las citas  asignadas que tiene cada estilista."
         this.textoBoton="Nueva cita";
-      }
-  };
+      }else if(this.ruta=="/admin/servicioPorEstilista"){
+        this.nombreSeccion="Servicio por estilista"
+        this.ayuda="En esta página podras asignarle un servicio a un estilista, si deseas ver sus citas haz click sobre uno de ellos, también podrás administrar sus disponibilidades."
+        this.textoBoton="Ver disponiblidades";
+  }else if(this.ruta=="/admin/disponibilidad"){
+    this.nombreSeccion="Disponibilidades"
+    this.ayuda="Aquí podrás ver las desponibilidades a lo largo del dia de tus estilistar, podrás gestionarlas tanto individual como grupalmente, añadiendo bloques a varios estlistas ya sea diario o semanalmente"
+    // this.textoBoton="Ver disponiblidades";
 
+  }
+}
 }

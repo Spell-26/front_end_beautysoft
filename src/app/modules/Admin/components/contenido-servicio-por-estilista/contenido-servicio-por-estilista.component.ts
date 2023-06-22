@@ -1,20 +1,16 @@
-import { BtnServicioPorEstilistaComponent } from './../btn-servicio-por-estilista/btn-servicio-por-estilista.component';
 import { Component, TemplateRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
-
 
 @Component({
-  selector: 'app-contenido-card-estilista',
-  templateUrl: './contenido-card-estilista.component.html',
-  styleUrls: ['./contenido-card-estilista.component.css']
+  selector: 'app-contenido-servicio-por-estilista',
+  templateUrl: './contenido-servicio-por-estilista.component.html',
+  styleUrls: ['./contenido-servicio-por-estilista.component.css']
 })
-export class ContenidoCardEstilistaComponent {
-
-   //editar boton
+export class ContenidoServicioPorEstilistaComponent {
+ //editar boton
 
  private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
@@ -89,5 +85,4 @@ export class ContenidoCardEstilistaComponent {
     }
 
   }
-
 }
