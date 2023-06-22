@@ -6,11 +6,13 @@
                   {{textoEstado}}
               </span>
     </div>
+
     <div class="editar" (click)="mostrarBurbuja()">
       <span class="material-symbols-outlined">
         more_vert
       </span>
     </div>
+
   </div>
   <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
     <div [hidden]="ocultar_opciones">
@@ -18,6 +20,7 @@
       <div (click)="openDialogWithTemplate(template3)" class="botonEliminar" >Eliminar</div>
     </div>
   </div>
+
   <img src="/assets/img/card_user.jpg" alt="">
 <div class="info-head">
   <h2>James Sánchez</h2>
