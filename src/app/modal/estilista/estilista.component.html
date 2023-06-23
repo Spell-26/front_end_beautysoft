@@ -1,62 +1,51 @@
 <button class="nuevo-usuario-btn" (click)="openDialogWithTemplate(template2)">Nuevo estilista</button>
 
 <ng-template #template2>
-  <h1 mat-dialog-title class="header-modal">Ingresar estilista<hr></h1>
-  <p class="info">En esta ventana podrás registrar un nuevo estilista</p>
-
-  <div mat-dialog-content class="custom-dialog-content">
-    <form [formGroup]="formGroup">
-      <mat-form-field class="nombre">
-        <input matInput placeholder="Primer Nombre" formControlName="name">
-        <mat-error *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched">
-          El primer nombre es requerido.
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="apellido">
-        <input matInput placeholder="Apellido" formControlName="lastname">
-        <mat-error *ngIf="formGroup.get('lastname')?.invalid && formGroup.get('lastname')?.touched">
-          El apellido es requerido.
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="email-form">
-        <input matInput placeholder="Email" formControlName="Gmail">
-        <mat-error *ngIf="formGroup.get('Gmail')?.invalid && formGroup.get('Gmail')?.touched">
-          El email es requerido y debe ser válido.
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="contraseña-form">
-        <input matInput placeholder="Contraseña" formControlName="contraseña">
-        <mat-error *ngIf="formGroup.get('contraseña')?.invalid && formGroup.get('contraseña')?.touched">
-          La contraseña es requerida.
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="confirmar-form">
-        <input matInput placeholder="Confirmar Contraseña" formControlName="ConfirmContraseña">
-        <mat-error *ngIf="formGroup.get('ConfirmContraseña')?.invalid && formGroup.get('ConfirmContraseña')?.touched">
-          La confirmación de contraseña es requerida.
-        </mat-error>
-      </mat-form-field>
-
-      <div>
-        <p style="font-weight: bold; margin-right: 200px;">Estado: </p>
-        <div id="estado">
-          <div style="margin-right: 200px;" (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
-            <span>
-              {{textoEstado}}
-            </span>
-          </div>
-        </div>
-      </div>
-    </form>
+  <h1 mat-dialog-title class="header-modal">Registrar un nuevo estilista<hr></h1>
+  <div class="info">
+   <p>En esta ventana podrás crear un nuevo estilista</p>
   </div>
-
-  <div class="Botones" mat-dialog-actions>
-    <button class="crear" mat-button (click)="onSave()">Crear Estilista</button>
-    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+ 
+   <div mat-dialog-content class="custom-dialog-content">
+     <form [formGroup]="formGroup">
+       <div class="select">
+         <input type="text" placeholder="Nombre:" formControlName="nombre" name="" id="">
+         <span class="span" *ngIf="formGroup.get('nombre')?.invalid && formGroup.get('nombre')?.touched">
+           El nombre es requerido
+         </span>
+         <input type="text" placeholder="Apellido:" formControlName="apellido" name="" id="">
+         <span class="span" *ngIf="formGroup.get('apellido')?.invalid && formGroup.get('apellido')?.touched">
+           El apelldio es requerido
+         </span>
+         <input type="email" placeholder="Email"  formControlName="email" name="" id="">
+         <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+           El email es requerido y debe ser válido
+         </span>
+ 
+         <input type="password" placeholder="Contraseña" formControlName="contraseña" name="" id="">
+         <span class="span" *ngIf="formGroup.get('contraseña')?.invalid && formGroup.get('contraseña')?.touched">
+           La contraseña es requeriadad
+         </span>
+         <input type="password" placeholder="Confirmar contraseña" formControlName="confirmar" name="" id="">
+         <span class="span" *ngIf="formGroup.get('confirmar')?.invalid && formGroup.get('confirmar')?.touched">
+           La confrimación es requeridad
+         </span>
+       </div>
+     <div>
+       <div class="estado">
+           <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+             {{textoEstado}}
+           </span></p>
+         </div>
+       </div>
+       <div class="Botones" mat-dialog-actions>
+         <button class="crear" mat-button (click)="onSave()">Guardar</button>
+       </div>
+       <div class="texto-politicas">
+         <p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>
+       </div>
+     </form>
+   </div>  
 
 
 

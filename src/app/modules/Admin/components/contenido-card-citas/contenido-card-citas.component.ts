@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
+import { DialogService } from 'src/app/service/dialog.service';
 
 @Component({
   selector: 'app-contenido-card-citas',
@@ -6,43 +10,81 @@ import { Component } from '@angular/core';
   styleUrls: ['./contenido-card-citas.component.css']
 })
 export class ContenidoCardCitasComponent {
-  protected estado:boolean = true;
-  protected textoEstado:string ="Activo";
-
-  protected cambiarEstado():void{
-    this.estado = !this.estado;
-
-    if(this.estado){
-      this.textoEstado = "Activo";
-    }
-    else{
-      this.textoEstado = "Inactivo";
-    }
-  }
-
-  protected editar_collapsed:boolean = true;
-  protected ocultar_opciones:boolean = true;
+  
+private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
 
-  mostrarBurbuja():void {
-    this.editar_collapsed = !this.editar_collapsed;
-    this.mostrarOpciones();
-  }
-  mostrarOpciones():void{
-    if (!this.editar_collapsed){
-      try{
-        setTimeout(() =>{
-            this.ocultar_opciones = !this.ocultar_opciones;
-          }, 800
-        );
-      }
-      catch (e) {
-        console.log(e);
-      }
-    }
-    else{
-      this.ocultar_opciones = !this.ocultar_opciones;
-    }
+formGroup: FormGroup = this.formBuilder.group({
+  fecha: ['', Validators.required],
+  hora:['',Validators.required]
 
-  }
+})
+
+constructor(private dialogService:DialogService, private formBuilder: FormBuilder  ){}
+
+openDialogCustom(){
+  this.dialogService.openDialogCustom({
+    title: ' ¿Estas seguro de eliminar este servicio?',
+    content: 'Al eliminar este servicio su informacion será eliminda permanentemente ¿Deseas Continuar?',
+  }).afterClosed().subscribe(res=> {
+    console.log('Dialog Custom Close', res)
+  this.formGroup.reset();
+  });
+}
+
+openDialogWithTemplate(template: TemplateRef<any>){
+  this.matDialogRef = this.dialogService.openDialogWithTemplate({
+    template,})
+    this.matDialogRef
+  .afterClosed().subscribe(res => {
+    console.log('Dialog with template Close', res)
+    this.formGroup.reset();
+  })
+}
+
+onSave(){
+  console.log(this.formGroup.value);
+  this.formGroup.reset()
+  this.matDialogRef.close()
+}
+
+ protected estado:boolean = true;
+ protected textoEstado:string ="Activo";
+
+ protected cambiarEstado():void{
+   this.estado = !this.estado;
+
+   if(this.estado){
+     this.textoEstado = "Activo";
+   }
+   else{
+     this.textoEstado = "Inactivo";
+   }
+ }
+
+ protected editar_collapsed:boolean = true;
+ protected ocultar_opciones:boolean = true;
+
+
+ mostrarBurbuja():void {
+   this.editar_collapsed = !this.editar_collapsed;
+   this.mostrarOpciones();
+ }
+ mostrarOpciones():void{
+   if (!this.editar_collapsed){
+     try{
+       setTimeout(() =>{
+           this.ocultar_opciones = !this.ocultar_opciones;
+         }, 800
+       );
+     }
+     catch (e) {
+       console.log(e);
+     }
+   }
+   else{
+     this.ocultar_opciones = !this.ocultar_opciones;
+   }
+
+ }
 }

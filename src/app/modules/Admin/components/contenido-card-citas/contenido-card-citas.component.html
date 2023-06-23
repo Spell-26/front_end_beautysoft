@@ -13,8 +13,8 @@
     </div>
     <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
       <div [hidden]="ocultar_opciones">
-        <div class="botonEditar">Editar</div>
-        <div class="botonEliminar" >Eliminar</div>
+        <div class="botonEditar" (click)="openDialogWithTemplate(template2)">Editar</div>
+        <div class="botonEliminar" (click)="openDialogWithTemplate(template3)" >Eliminar</div>
       </div>
     </div>
   <div class="info-head">
@@ -27,4 +27,60 @@
     </div>
   </div>
 
+  <ng-template #template3>
+
+    <h1 mat-dialog-title class="header-modal">¿Estas seguro de eliminar está cita?<hr></h1>
+
+<div mat-dialog-content class="custom-dialog-content">
+    <p style="font-weight: bold;">Al eliminar está cita su informacion será eliminda permanentemente ¿Deseas Continuar?</p>
+</div>
+<div class="Botones-eliminar" mat-dialog-actions>
+    <button class="eliminar__crear" mat-button (click)="onSave()">Continuar</button>
+    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+</div>
+  
+  
+  </ng-template>
+
   <app-cita-modal></app-cita-modal>
+
+  <ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Actualizar cita<hr></h1>
+  <div class="info">
+   <p>En esta ventana podrás actualizar una cita</p>
+  </div>
+ 
+   <div mat-dialog-content class="custom-dialog-content">
+     <form [formGroup]="formGroup">
+       <div class="select">
+         <select class="dropdown"  name="" id="">
+           <option value="" selected disabled>Servicio</option>
+           <option value="" >Corte de cabello</option>
+           <option value="" >Cepillado de cabello</option>
+         </select>
+         <span class="span" *ngIf="formGroup.get('servivio')?.invalid && formGroup.get('valor')?.touched">
+           El valor es requerido
+         </span>
+         <input type="text" placeholder="Fecha" formControlName="fecha" onfocus="(this.type='date')" name="" id="">
+         <span class="span" *ngIf="formGroup.get('fecha')?.invalid && formGroup.get('fecha')?.touched">
+           La fecha es requeridad
+         </span>
+         <input type="text" placeholder="Hora" formControlName="hora" onfocus="(this.type='time')" name="" id="">
+         <span class="span" *ngIf="formGroup.get('hora')?.invalid && formGroup.get('hora')?.touched">
+           La hora es requerida
+         </span>
+       </div>
+       <div>
+         <div class="estado">
+             <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+               {{textoEstado}}
+             </span></p>
+           </div>
+         </div>
+     </form>
+   </div>
+   <div class="Botones" mat-dialog-actions>
+     <button class="crear" mat-button (click)="onSave()">Guardar</button>
+   </div>
+
+  </ng-template>

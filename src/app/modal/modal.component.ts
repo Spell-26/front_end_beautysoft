@@ -13,11 +13,11 @@ export class ModalComponent {
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = this.formBuilder.group({
-    name: ['', Validators.required],
-    lastname: ['', Validators.required],
-    Gmail: ['', [Validators.required, Validators.email]],
+    nombre: ['', Validators.required],
+    apellido: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     contraseña: ['', Validators.required],
-    ConfirmContraseña: ['', Validators.required]
+    confirmar: ['', Validators.required]
   });
 
   constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}

@@ -1,0 +1,39 @@
+
+<button class="nuevo-usuario-btn" (click)="openDialogWithTemplate(template2)">Nuevo servicio</button>
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Registrar un nuevo servicio<hr></h1>
+ <div class="info">
+  <p>En esta ventana podrás crear un nuevo servicio</p>
+ </div>
+
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="formGroup">
+      <div class="select">
+        <input type="text" placeholder="Nombre del servicio:" formControlName="nombre" name="" id="">
+        <span class="span" *ngIf="formGroup.get('nombre')?.invalid && formGroup.get('nombre')?.touched">
+          El nombre del servicio es requerido
+        </span>
+        <input type="text" placeholder="Duración" onfocus="(this.type='time')" formControlName="duracion" name="" id="">
+        <span class="span" *ngIf="formGroup.get('duracion')?.invalid && formGroup.get('duracion')?.touched">
+          La duración es requeridad
+        </span>
+
+        <input type="number" placeholder="Valor" formControlName="valor" name="" id="">
+        <span class="span" *ngIf="formGroup.get('valor')?.invalid && formGroup.get('valor')?.touched">
+          El valor es requerido
+        </span>
+      </div>
+    <div>
+      <div class="estado">
+          <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+            {{textoEstado}}
+          </span></p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="Botones" mat-dialog-actions>
+    <button class="crear" mat-button (click)="onSave()">Guardar</button>
+  </div>
+

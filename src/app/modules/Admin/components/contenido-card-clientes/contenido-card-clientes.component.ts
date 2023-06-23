@@ -16,7 +16,7 @@ export class ContenidoCardClientesComponent {
 
 
  formGroup: FormGroup = this.formBuilder.group({
-  Gmail:['',Validators.email]
+  email: ['', [Validators.required, Validators.email]],
 
  })
 
@@ -41,12 +41,17 @@ export class ContenidoCardClientesComponent {
      this.formGroup.reset();
    })
  }
+ onSave() {
+  if (this.formGroup.valid) {
+    console.log(this.formGroup.value);
+    this.formGroup.reset();
+    this.matDialogRef.close();
+  } else {
+    // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
+    //utilizar libreria snackbar para mostrar un error en un tiempo definido
+  }
+}
 
- onSave(){
-   console.log(this.formGroup.value);
-   this.formGroup.reset()
-   this.matDialogRef.close()
- }
 
   protected estado:boolean = true;
   protected textoEstado:string ="Activo";

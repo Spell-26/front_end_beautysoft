@@ -1,27 +1,22 @@
 import { Component, TemplateRef } from '@angular/core';
-import { FormGroup,FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators, FormGroup} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
 import Swal from 'sweetalert2';
 
-
 @Component({
-  selector: 'app-clientes',
-  templateUrl: './clientes.component.html',
-  styleUrls: ['./clientes.component.css']
+  selector: 'app-servicios-modal',
+  templateUrl: './servicios-modal.component.html',
+  styleUrls: ['./servicios-modal.component.css']
 })
-export class ClientesComponent {
+export class ServiciosModalComponent {
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = this.formBuilder.group({
-    nombre: ['', Validators.required],
-    apellido: ['', Validators.required],
-    telefono:new FormControl('',[Validators.required,Validators.pattern('^[0-9]{10}$')]),
-    direccion:['',Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    contraseña: ['', Validators.required],
-    confirmar: ['', Validators.required]
+    nombre:['', Validators.required],
+    duracion: ['', Validators.required],
+    valor:['',Validators.required]
   });
 
   constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}

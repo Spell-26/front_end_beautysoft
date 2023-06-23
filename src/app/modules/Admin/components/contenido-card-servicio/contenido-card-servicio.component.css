@@ -1,134 +1,125 @@
 .container-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  .settings-content-collapsed{
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0);
-    left: 16em;
-    top: 3em;
-    width: 1em;
-    height: 1em;
-    border-radius: 10px;
-    transition: width 0.8s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 1s ease;
-  }
-  
-  .settings-content{
-    position: absolute;
-    background-color: #fff;
-    left: 12.5em;
-    top: 3em;
-    width: 8em;
-    height: 8.5em;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    transition: width 0.9s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 0.01s ease;
-  }
-  .settings-content:before{
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    border-color: transparent transparent #fff transparent;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.settings-content-collapsed{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  left: 16em;
+  top: 3em;
+  width: 1em;
+  height: 1em;
+  border-radius: 10px;
+  transition: width 0.8s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 1s ease;
+}
 
-  .header-modal{
-    text-align: center;
-  }
-  
-  .botonEditar, .botonEliminar {
-    padding: 0.8em;
-    margin-top: 0.8em;
-    width: 100%;
-    cursor: pointer;
-    background-image: linear-gradient(180deg, #fff, #fff);
-    transition: background-image 0.5s ease;
-  }
-  .botonEditar:hover, .botonEliminar:hover{
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(116,51,127,1) 50%, rgba(255,255,255,1) 100%);  color: #fff;
-  }
-  .editar{
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .container-info img{
-    width: 8em;
-    height: 8em;
-    border-radius: 100%;
-    object-fit: cover;
-    margin-top: 1em;
-  }
-  
-  .card__datos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  
-  
-  #estado{
-    background-color: #ffffff00;
-    width: 100%;
-    height: 2em;
-    display: flex;
-    justify-content: end;
-    user-select: none;
-  }
-  .estado-hijo{
-    width: 30%;
-    height: 1.5em;
-    border-radius: 10px;
-    border: 2px solid green;
-    margin: 0.2em 0.5em 0 0;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .estado-hijo span{
-    padding: 0.5em;
-    color: green;
-  }
-  .estado-hijo-click{
-    width: 30%;
-    height: 1.5em;
-    border-radius: 10px;
-    border: 2px solid orangered;
-    margin: 0.2em 0.5em 0 0;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .estado-hijo-click span{
-    padding: 0.5em;
-    color: orangered;
-  }
-  .info-head{
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    margin-bottom: 0.5em;
-  }
-  .info-head h2, .info-head span{
-    display: inline-block;
-    width: 100%;
-  
-  }
-  .info-head h2{
-    margin: 0.5em 0 0 0;
-  }
-  
-  
+.settings-content{
+  position: absolute;
+  background-color: #fff;
+  left: 12.5em;
+  top: 3em;
+  width: 8em;
+  height: 8.5em;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: width 0.9s ease, height 0.6s ease-in, top 0.2s ease, left 0.3s ease-in, background-color 0.01s ease;
+}
+.settings-content:before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+}
+.botonEditar, .botonEliminar {
+  padding: 0.8em;
+  margin-top: 0.8em;
+  width: 100%;
+  cursor: pointer;
+  background-image: linear-gradient(180deg, #fff, #fff);
+  transition: background-image 0.5s ease;
+}
+.botonEditar:hover, .botonEliminar:hover{
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(116,51,127,1) 50%, rgba(255,255,255,1) 100%);  color: #fff;
+}
+.editar{
+  cursor: pointer;
+  user-select: none;
+}
+
+.container-info img{
+  width: 8em;
+  height: 8em;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-top: 1em;
+}
+
+.card__datos{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+#estado{
+  background-color: #ffffff00;
+  width: 100%;
+  height: 2em;
+  display: flex;
+  justify-content: end;
+  user-select: none;
+}
+
+/* tamaño del modal */
+
+.nuevo-usuario-btn{
+  position: absolute;
+  left: 820px;
+  top: 25px;
+  width: 180px;
+  background-color: #F9AD1A;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+  padding: 0.85em;
+  color: white;
+  border: none;
+
+}
+/* texto de la cabecera del modal */
+.header-modal{
+  font-weight: bold;
+  text-align: center;
+}
+hr{
+  width: 80%;
+  margin: auto;
+}
+/* texto de informacion */
+.info{
+  background-color: #6BCEE3;
+  border-radius: 15px;
+  text-align: center;
+  width: 80%;
+  color:#5305FA;
+  margin: auto;
+}
+
+
+
 .crear{
-  width: 100px;
+  width: 80%;
   height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
   background-color: #74337F;
   border-radius: 8px;
   color: white;
@@ -141,21 +132,116 @@
   background: #56245f;
 
 }
+/*Botones de eliminar y cancelar*/
+.Botones-eliminar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.eliminar__crear,
+.cancelar{
+  background-color:  #74337F ;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+}
+.cancelar{
+  background-color: red;
+}
 
 .cancelar:hover{
   background: #7a0101 ;
 
 }
 
+.eliminar__crear:hover{
+  background: #56245f;
+}
 
-.cancelar{
-  width: 100px;
-  height: 40px;
-  background-color: red;
-  border-radius: 8px;
-  color: white;
-  margin: 10px 30px 10px 10px;
-  border: none;
-  box-shadow: 2px 2px 5px #5b5a5a;
+
+
+
+
+
+/* ajustes del boton de activo e inactivo */
+.boton__estado{
+  font-weight: bold; 
+  margin-left:45px; 
+  margin-top: 40px
+}
+
+.estado-hijo{
+  width: 40%;
+  height: 1.5em;
+  border-radius: 10px;
+  padding: 3px;
+  border: 2px solid green;
+  color: green;
+
+  text-align: center;
   cursor: pointer;
 }
+
+
+.estado-hijo-click{
+  width: 35%;
+  height: 1.5em;
+  padding: 3px;
+  border-radius: 10px;
+  color: red;
+  border: 2px solid orangered;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+/*Para modificar el select*/
+.select{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+
+/*Estilos para los input de fecha y hora sin cambiar*/
+input[type="text"]{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+
+
+}
+/**Estilos para los input de fecha y hora cuando cambiam*/
+input[type="number"],
+input[type="time"]{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+}
+
+.custom-dialog-content {
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+ /* Ajusta la altura según tus necesidades */
+}
+
+.span{
+  margin-left: 50px;
+  color: red;
+  margin-bottom: 6px;
+  font-size: small;
+}
+

@@ -1,18 +1,9 @@
-#contenedor-app{
-  display: flex;
-}
-
-/* boton d despliegue */
 .nuevo-usuario-btn{
   position: absolute;
   left: 820px;
   top: 25px;
   width: 180px;
   background-color: #F9AD1A;
-  /* margin: 0 5em 0 0; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 6px;
   box-shadow: 2px 2px 5px #5b5a5a;
   cursor: pointer;
@@ -22,105 +13,29 @@
 
 }
 
-.nuevo-usuario-btn:hover{
-  background-color: #ef950c;
-}
-
-
-/* formularios */
-
-.nombre{
-  width: 40%;
-}
-
-.apellido{
-  width: 40%;
-  margin-left: 20px;
-}
-
-.contraseña-form{
-  width: 100%;
-}
-.confirmar-form{
-  width: 100%;
-}
-
-.email-form{
-  width: 100%;
-}
-
-/* texto de la cabecera del modal */
 .header-modal{
+  font-weight: bold;
   text-align: center;
 }
+hr{
+  width: 80%;
+  margin: auto;
+}
 
-/* texto de informacion */
 .info{
   background-color: #6BCEE3;
   border-radius: 15px;
   text-align: center;
   width: 80%;
   color:#5305FA;
-  margin: 0 100px 0 40px;
+  margin: auto;
 }
-
-
-/* ajustes del boton de activo e inactivo */
-
-#estado{
-  background-color: #ffffff00;
-  width: 250px;
-  height: 2em;
-  display: flex;
-  justify-content: center;
-  user-select: none;
-  margin-right: 200px;
-}
-.estado-hijo{
-  width: 30%;
-  height: 1.5em;
-  border-radius: 10px;
-  border: 2px solid green;
-  margin: 0.2em 0.5em 0 0;
-  text-align: center;
-  cursor: pointer;
-}
-
-.estado-hijo span{
-  padding: 0.5em;
-  color: green;
-}
-.estado-hijo-click{
-  width: 30%;
-  height: 1.5em;
-  border-radius: 10px;
-  border: 2px solid orangered;
-  margin: 0.2em 0.5em 0 0;
-  text-align: center;
-  cursor: pointer;
-}
-
-.estado-hijo-click span{
-  padding: 0.5em;
-  color: orangered;
-}
-.info-head{
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  margin: 15px;
-}
-
-
-/* botones de guardar y cancelar */
-.Botones{
-  display: flex;
-  justify-content: space-around;
-}
-
 .crear{
-  width: 100px;
+  width: 80%;
   height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
   background-color: #74337F;
   border-radius: 8px;
   color: white;
@@ -139,30 +54,106 @@
 
 }
 
+.x{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 
-.cancelar{
-  width: 100px;
-  height: 40px;
-  background-color: red;
-  border-radius: 8px;
+}
+
+.x button{
+  margin-right: 5px;
+  background-color: gray;
+  padding: 8px;
   color: white;
-  margin: 10px 30px 10px 10px;
-  border: none;
-  box-shadow: 2px 2px 5px #5b5a5a;
+}
+
+
+
+/* ajustes del boton de activo e inactivo */
+.boton__estado{
+  font-weight: bold; 
+  margin-left:45px; 
+  margin-top: 40px
+}
+
+.estado-hijo{
+  width: 40%;
+  height: 1.5em;
+  border-radius: 10px;
+  padding: 3px;
+  border: 2px solid green;
+  color: green;
+
+  text-align: center;
   cursor: pointer;
 }
 
-/* tamaño del modal */
+
+.estado-hijo-click{
+  width: 35%;
+  height: 1.5em;
+  padding: 3px;
+  border-radius: 10px;
+  color: red;
+  border: 2px solid orangered;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+/*Para modificar el select*/
+.select{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+
+/*Estilos para los input de fecha y hora sin cambiar*/
+input[type="text"]{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+
+
+}
+/**Estilos para los input de fecha y hora cuando cambiam*/
+input[type="email"],
+input[type="password"]{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+}
 
 .custom-dialog-content {
   width: 500px; /* Ajusta el ancho según tus necesidades */
-  height: 300px; /* Ajusta la altura según tus necesidades */
+ /* Ajusta la altura según tus necesidades */
 }
 
+.span{
+  margin-left: 50px;
+  color: red;
+  margin-bottom: 6px;
+  font-size: small;
+}
 
 .texto-politicas{
-  width: 365px;
-  margin-left: 60px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: justify;
-
 }
+
+

@@ -13,13 +13,9 @@ export class CitaModalComponent {
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = this.formBuilder.group({
-    name: ['', Validators.required],
-    lastname: ['', Validators.required],
-    telefono:new FormControl('',[Validators.required,Validators.pattern('^[0-9]{10}$')]),
-    direccion:['',Validators.required],
-    Gmail: ['', [Validators.required, Validators.email]],
-    contraseña: ['', Validators.required],
-    ConfirmContraseña: ['', Validators.required]
+    desplegable: ['', Validators.required],
+    fecha: ['', Validators.required],
+    hora: ['', Validators.required]
   });
 
   constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}
