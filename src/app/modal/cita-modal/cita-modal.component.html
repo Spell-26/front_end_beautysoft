@@ -1,0 +1,44 @@
+
+<button class="nuevo-usuario-btn" (click)="openDialogWithTemplate(template2)">Nueva cita</button>
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Crear una nueva cita<hr></h1>
+ <div class="info">
+  <p>En esta ventana podrás crear una nueva cita</p>
+ </div>
+
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="formGroup">
+      <div class="select">
+        <select class="dropdown"  name="" id="">
+          <option value="" selected disabled>Servicio</option>
+          <option value="" >Corte de cabello</option>
+          <option value="" >Cepillado de cabello</option>
+        </select>
+        <span class="span" *ngIf="formGroup.get('valor')?.invalid && formGroup.get('valor')?.touched">
+          El valor es requerido
+        </span>
+        <input type="text" placeholder="Fecha" formControlName="fecha" onfocus="(this.type='date')" name="" id=""><br>
+        <span class="span" *ngIf="formGroup.get('fecha')?.invalid && formGroup.get('fecha')?.touched">
+          La fecha es requeridad
+        </span>
+        <input type="text" placeholder="Hora" formControlName="hora" onfocus="(this.type='time')" name="" id="">
+        <span class="span" *ngIf="formGroup.get('hora')?.invalid && formGroup.get('hora')?.touched">
+          La hora es requeridad
+        </span>
+      </div>
+      <div>
+        <div class="estado">
+            <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+              {{textoEstado}}
+            </span></p>
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="Botones" mat-dialog-actions>
+    <button class="crear" mat-button (click)="onSave()">Guardar</button>
+  </div>
+
+
+|
