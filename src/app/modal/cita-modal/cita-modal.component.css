@@ -1,0 +1,153 @@
+.nuevo-usuario-btn{
+  position: absolute;
+  left: 820px;
+  top: 25px;
+  width: 180px;
+  background-color: #F9AD1A;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+  padding: 0.85em;
+  color: white;
+  border: none;
+
+}
+
+.header-modal{
+  text-align: center;
+}
+
+.info{
+  background-color: #6BCEE3;
+  border-radius: 15px;
+  text-align: center;
+  width: 80%;
+  color:#5305FA;
+  margin: 0 100px 0 40px;
+}
+
+
+
+  
+.crear{
+  width: 80%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  background-color: #74337F;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+
+}
+.crear:hover{
+  background: #56245f;
+
+}
+.boton__estado{
+  font-weight: bold; 
+  margin-left:45px; 
+  margin-top: 40px
+}
+
+.estado-hijo{
+  width: 40%;
+  height: 1.5em;
+  border-radius: 10px;
+  padding: 3px;
+  border: 2px solid green;
+  color: green;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.estado-hijo-click{
+  width: 35%;
+  height: 1.5em;
+  padding: 3px;
+  border-radius: 10px;
+  color: red;
+  border: 2px solid orangered;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+
+
+/* ajustes del boton de activo e inactivo */
+
+
+/*Para modificar el select*/
+.select{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.dropdown{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+
+}
+
+/*Estilos para los input de fecha y hora sin cambiar*/
+input[type="text"]{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+
+
+}
+/**Estilos para los input de fecha y hora cuando cambiam*/
+input[type="date"]{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+}
+
+input[type="time"]{
+  margin-top: 30px;
+  margin-left: 40px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid  rgba(164, 119, 90, 1);
+
+}
+.custom-dialog-content {
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+ /* Ajusta la altura según tus necesidades */
+}
+
+.span{
+  margin-left: 50px;
+  color: red;
+  margin-bottom: 6px;
+  font-size: small;
+}
+

@@ -1,0 +1,61 @@
+
+<button class="nuevo-usuario-btn" (click)="openDialogWithTemplate(template2)">Nuevo cliente</button>
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Registrar un nuevo cliente<hr></h1>
+  <div class="info">
+   <p>En esta ventana podrás crear un nuevo cliente.</p>
+  </div>
+   <div mat-dialog-content class="custom-dialog-content">
+     <form [formGroup]="formGroup">
+       <div class="select">
+         <input type="text" placeholder="Nombre:" formControlName="nombre" name="" id="">
+         <span class="span" *ngIf="formGroup.get('nombre')?.invalid && formGroup.get('nombre')?.touched">
+           El nombre es requerido.
+         </span>
+         <input type="text" placeholder="Apellido:" formControlName="apellido" name="" id="">
+         <span class="span" *ngIf="formGroup.get('apellido')?.invalid && formGroup.get('apellido')?.touched">
+           El apelldio es requerido.
+         </span>
+         <input type="text" placeholder="Télefono:" formControlName="telefono" name="" id="">
+         <span class="span" *ngIf="formGroup.get('telefono')?.hasError('required') && formGroup.get('telefono')?.touched">
+           El télefono es requerido y debe ser valido.
+         </span>
+         <span class="span" *ngIf="formGroup.get('telefono')?.hasError('pattern')">
+          Solo debe ser número 
+        </span>
+
+         <input type="text" placeholder="Dirección:" formControlName="direccion" name="" id="">
+         <span class="span" *ngIf="formGroup.get('direccion')?.invalid && formGroup.get('direccion')?.touched">
+           La dirección es requeridad
+         </span>
+
+         <input type="email" placeholder="Email:"  formControlName="email" name="" id="">
+         <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+           El email es requerido y debe ser válido.
+         </span>
+ 
+         <input type="password" placeholder="Contraseña:" formControlName="contraseña" name="" id="">
+         <span class="span" *ngIf="formGroup.get('contraseña')?.invalid && formGroup.get('contraseña')?.touched">
+           La contraseña es requeriadad.
+         </span>
+         <input type="password" placeholder="Confirmar contraseña:" formControlName="confirmar" name="" id="">
+         <span class="span" *ngIf="formGroup.get('confirmar')?.invalid && formGroup.get('confirmar')?.touched">
+           La confrimación es requeridad.
+         </span>
+       </div>
+     <div>
+       <div class="estado">
+           <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+             {{textoEstado}}
+           </span></p>
+         </div>
+       </div>
+       <div class="Botones" mat-dialog-actions>
+         <button class="crear" mat-button (click)="onSave()">Guardar</button>
+       </div>
+       <div class="texto-politicas">
+         <p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>
+       </div>
+     </form>
+   </div>

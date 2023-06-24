@@ -1,0 +1,107 @@
+.container{
+  background-color: #f6f6f6;
+  width: 100%;
+  max-height: 100%;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+
+}
+.container h1{
+  font-size: 2.3em;
+}
+
+.barra-busqueda{
+  margin-top: 1em;
+  position: relative;
+  width: 250px;
+  margin-right: 5em;
+
+}
+.barra-busqueda input{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(136, 134, 134);
+  border-radius: 5px;
+  outline: none;
+  color: rgba(110,48,131,1);
+  font-size: 1em;
+  background: #f6f6f6 !important;
+}
+.barra-busqueda .placeholder-busqueda {
+  position: absolute;
+  left: 0;
+  padding: 12px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgb(136, 134, 134);
+  transition: 0.5s;
+}
+
+.barra-busqueda input:valid ~ .placeholder-busqueda,
+.barra-busqueda input:focus ~ .placeholder-busqueda{
+  color: rgba(110,48,131,1);
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: #f6f6f6;
+  border-left: 1px solid rgba(110,48,131,1);
+  border-right: 1px solid rgba(110,48,131,1);
+  letter-spacing: 0.2em;
+}
+.barra-busqueda input:valid,
+.barra-busqueda input:focus{
+  border: 1px solid rgba(110,48,131,1);
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.nueva-cita{
+  background-color: #f9ad1a;
+  padding: 1em;
+  height: 3em;
+  margin-top: 1em;
+  color: white;
+  border-radius: .5em;
+  box-shadow: 2px 2px 5px #6b6a6a;
+}
+.contenedor-interno{
+  margin-top: 1em;
+  width: 100%;
+  padding: 1.5em;
+  height: 38em;
+  overflow-y: scroll;
+  background-color: #fff;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: 5px 5px 5px rgba(115, 115, 115, 0.59);
+}
+.contenedor-interno app-card-cita{
+  width: 28%;
+  margin-left: 1.5em;
+}
+
+
+
+*::-webkit-scrollbar{
+  width: 1em;
+
+}
+*::-webkit-scrollbar-track{
+  margin-block: .5em;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(197,92,69,0.6) 0%, rgba(106,46,134,0.6) 100%);
+  border: .15em solid rgb(255, 255, 255);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(180deg, rgba(197,92,69,1) 0%, rgba(106,46,134,1) 100%);
+}

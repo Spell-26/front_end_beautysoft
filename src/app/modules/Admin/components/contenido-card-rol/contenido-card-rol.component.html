@@ -1,0 +1,85 @@
+
+<div class="container-info">
+    <div id="estado">
+      <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+                <span>
+                    {{textoEstado}}
+                </span>
+      </div>
+      <div class="editar" (click)="mostrarBurbuja()">
+        <span class="material-symbols-outlined">
+          more_vert
+        </span>
+      </div>
+    </div>
+    <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
+      <div [hidden]="ocultar_opciones">
+        <div class="botonEditar" (click)="openDialogWithTemplate(template2)" >Editar</div>
+        <div (click)="openDialogWithTemplate(template3)" class="botonEliminar">Eliminar</div>
+      </div>
+    </div>
+    <img src="/assets/img/card_user.jpg" alt="">
+  <div class="info-head">
+    <h2>Estilista</h2>
+  </div>
+    <div class="card__datos">
+      <ul>
+        <li>Citas</li>
+        <li>Turnos</li>
+        <li>Disponiblidad</li>
+        <li>Perfil estilista</li>
+      </ul>
+    </div>
+  </div>
+
+  <app-rol></app-rol>
+
+<!-- template para eliminar -->
+
+
+<ng-template #template3>
+
+  <h1 mat-dialog-title class="header-modal">¿Estas seguro de eliminar este rol?<hr></h1>
+
+<div mat-dialog-content class="custom-dialog-content">
+    <p style="font-weight: bold;">Al eliminar este rol su informacion será eliminda permanentemente ¿Deseas Continuar?</p>
+</div>
+
+<div class="Botones-eliminar" mat-dialog-actions>
+    <button class="crear" mat-button (click)="onSave()" >Continuar</button>
+    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+</div>
+
+</ng-template>
+
+
+<!-- contenido del template editar -->
+
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Editar Rol<hr></h1>
+
+  <p class="info">En esta ventana podrás editar un rol ya existente y asignarle acceso especifico a distintos modulos</p>
+
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="formGroup">
+      <mat-form-field class="nombre-rol">
+        <input matInput class="nombre-rol" placeholder="Nombre de Rol" formControlName="rolName">
+      </mat-form-field>
+<div class="container-check">
+      <div class="checkbox-container">
+        <p>Permisos: </p>
+        <mat-checkbox class = "check-citas"  formControlName="checkbox1">Modulo Citas</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox2">Modulo Cliente</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox3">Modulo Estilitas</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox4">Modulo Ventas</mat-checkbox>
+        <mat-checkbox class = "check-citas" formControlName="checkbox5">Modulo Servicios</mat-checkbox>
+      </div>
+    </div>
+    </form>
+    <div class="Botones" mat-dialog-actions>
+      <button class="crear" mat-button (click)="onSave()">Guardar</button>
+      <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+  </div>
+  </div>
+</ng-template>

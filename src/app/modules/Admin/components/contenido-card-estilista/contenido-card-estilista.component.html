@@ -1,0 +1,93 @@
+<div class="container-info">
+    <div id="estado">
+      <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+                <span>
+                    {{textoEstado}}
+                </span>
+      </div>
+      <div class="editar" (click)="mostrarBurbuja()">
+        <span class="material-symbols-outlined">
+          more_vert
+        </span>
+      </div>
+    </div>
+    <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
+      <div [hidden]="ocultar_opciones">
+        <div class="botonEditar" (click)="openDialogWithTemplate(template2)" >Editar</div>
+        <div class="botonEliminar" (click)="openDialogWithTemplate(template3)" >Eliminar</div>
+      </div>
+    </div>
+    <img src="/assets/img/card_user.jpg" alt="">
+  <div class="info-head">
+    <h2>Jose Guzman</h2>
+    <span>Estilista</span>
+  </div>
+    <div class="card__datos">
+        <p>Citas asignadas: 8</p>
+        <p>Citas cumplidas: 57</p>
+        <p>Correo: arleycastaneda22@gmail.com</p>
+        <p>Fecha de creación: 02/06/2023</p>
+    </div>
+  </div>
+
+
+
+
+  <!-- contenido de la advertencia del boton cancelar -->
+
+<ng-template #template3>
+  <h1 mat-dialog-title class="header-modal">¿Estas seguro de eliminar este estilista?<hr></h1>
+
+<div mat-dialog-content class="custom-dialog-content">
+    <p style="font-weight: bold;">Al eliminar este estilista su informacion será eliminda permanentemente ¿Deseas Continuar?</p>
+</div>
+
+<div class="Botones-eliminar" mat-dialog-actions>
+    <button class="eliminar__crear" mat-button (click)="onSave()">Continuar</button>
+    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+</div>
+
+</ng-template>
+<div class="botones">
+  <app-btn-servicio-por-estilista></app-btn-servicio-por-estilista>
+  <app-estilista></app-estilista>
+</div>
+
+
+
+<!-- contenido del template -->
+
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Actualizar un estilista<hr></h1>
+  <div class="info">
+   <p>En esta ventana podrás actualizar un estilista</p>
+  </div>
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="formGroup">
+      <div class="select">
+
+        <input type="email" placeholder="Email"  formControlName="email" name="" id="">
+        <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+          El email es requerido y debe ser válido
+        </span>
+      </div>
+    <div>
+      <div class="estado">
+          <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+            {{textoEstado}}
+          </span></p>
+        </div>
+      </div>
+      <div class="Botones" mat-dialog-actions>
+        <button class="crear" mat-button (click)="onSave()">Guardar</button>
+      </div>
+      <div class="texto-politicas">
+        <p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+
+
