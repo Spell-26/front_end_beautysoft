@@ -10,6 +10,7 @@ import {CitasAdminComponent} from "./components";
 import { LoginComponent } from './login/login.component';
 import { ServicioPorEstilistaAdminComponent } from './components/servicio-por-estilista-admin/servicio-por-estilista-admin.component';
 import { DisponibilidadAdminComponent } from './components/disponibilidad-admin/disponibilidad-admin.component';
+import {AdminClientesComponent} from "./components/admin-clientes/admin-clientes.component";
 
 
 //router
@@ -26,7 +27,7 @@ const routes: Routes=[
   //Ruta a Estilista
   {path:'estilista', component:EstilistaAdminComponent},
   //Ruta a Clientes
-  {path:'clientes', component:ClientesAdminComponent},
+  {path:'clientes', component:AdminClientesComponent},
   //Ruta a turnos
   {path:'turnos', component:TurnosAdminComponent},
   //Ruta a citas

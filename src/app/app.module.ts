@@ -11,9 +11,9 @@ import { MatCardModule } from '@angular/material/card';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-import { CardComponent } from './modules/Admin/components';
+import {CardComponent, HeaderAdminComponent} from './modules/Admin/components';
 import { ContenidoCardUsuarioComponent } from './modules/Admin/components';
-import { HeaderAdminComponent } from './modules/Admin/components';
+
 import { UsuariosAdminComponent } from './modules/Admin/components';
 import { RolesAdminComponent } from './modules/Admin/components';
 //check box
@@ -55,6 +55,9 @@ import { ContenidoCardDisponiblidadComponent } from './modules/Admin/components/
 import { DisponibilidadesModalComponent } from './modal/disponibilidades-modal/disponibilidades-modal.component';
 import { CitaModalComponent } from './modal/cita-modal/cita-modal.component';
 import { ServiciosModalComponent } from './modal/servicios-modal/servicios-modal.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AdministradorModule} from "./modules";
+import {AdminClientesComponent} from "./modules/Admin/components/admin-clientes/admin-clientes.component";
 
 
 
@@ -64,7 +67,6 @@ import { ServiciosModalComponent } from './modal/servicios-modal/servicios-modal
     AppComponent,
     CardComponent,
     ContenidoCardUsuarioComponent,
-    HeaderAdminComponent,
     UsuariosAdminComponent,
     RolesAdminComponent,
     ContenidoCardRolComponent,
@@ -97,7 +99,10 @@ import { ServiciosModalComponent } from './modal/servicios-modal/servicios-modal
     ContenidoCardDisponiblidadComponent,
     DisponibilidadesModalComponent,
     CitaModalComponent,
-    ServiciosModalComponent
+    ServiciosModalComponent,
+    HeaderAdminComponent,
+    AdminClientesComponent
+
 
 
   ],
@@ -121,7 +126,9 @@ import { ServiciosModalComponent } from './modal/servicios-modal/servicios-modal
 
     //importacion para el modal
     MatDialogModule,
-    MenuLateralComponent
+    MenuLateralComponent,
+    HttpClientModule,
+    AdministradorModule
 
 
   ],
