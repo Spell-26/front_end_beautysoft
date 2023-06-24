@@ -1,0 +1,36 @@
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div class="container-info">
+  <div id="estado">
+    <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+              <span>
+                  {{textoEstado}}
+              </span>
+    </div>
+    <div class="editar" (click)="mostrarBurbuja()">
+      <span class="material-symbols-outlined">
+        more_vert
+      </span>
+    </div>
+  </div>
+  <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
+    <div [hidden]="ocultar_opciones">
+      <!-- <div class="botonEditar" (click)="openDialogWithTemplate(template2)">Editar</div>
+      <div class="botonEliminar" (click)="openDialogWithTemplate(template3)" >Eliminar</div> -->
+    </div>
+  </div>
+  <img src="/assets/img/card_user.jpg" alt="">
+<div class="info-head">
+  <h2>Juliana Areiza</h2>
+  <span>Estilista</span>
+</div>
+  <div class="card__datos">
+    <p>Cepillado de cabello</p>
+    <p>Corte de cabello</p>
+
+  </div>
+</div>
+
+
+<app-servicio-por-estilista-modal></app-servicio-por-estilista-modal>

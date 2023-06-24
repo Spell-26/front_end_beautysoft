@@ -1,0 +1,51 @@
+
+<button class="nuevo-servicio-btn" (click)="openDialogWithTemplate(template2)">Nuevo servicio</button>
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Ingresar servicio<hr></h1>
+  <p class="info">En esta ventana podrás registrar un nuevo servicio</p>
+
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="formGroup">
+      <mat-form-field class="nombre">
+        <input matInput placeholder=" Nombre" formControlName="name">
+        <mat-error *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched">
+          El nombre del servicio es requerido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="email-form">
+        <input matInput placeholder="duracion" formControlName="telefono" type="number">
+        <mat-error *ngIf="formGroup.get('telefono')?.invalid && formGroup.get('telefono')?.touched">
+          La duracion es requerido .
+        </mat-error>
+        
+      </mat-form-field>
+
+      <mat-form-field class="email-form">
+        <input matInput placeholder="valor" formControlName="valor">
+        <mat-error *ngIf="formGroup.get('direccion')?.invalid && formGroup.get('direccion')?.touched">
+          El valor es requerido.
+        </mat-error>
+      </mat-form-field>
+
+      
+
+      <div>
+        <p style="font-weight: bold; margin-right: 200px;">Estado: </p>
+        <div id="estado">
+          <div style="margin-right: 200px;" (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+            <span>
+              {{textoEstado}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="Botones" mat-dialog-actions>
+    <button class="crear" mat-button (click)="onSave()">Crear Servicio</button>
+    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+
+

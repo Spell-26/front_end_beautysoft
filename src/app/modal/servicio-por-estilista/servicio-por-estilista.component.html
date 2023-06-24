@@ -1,0 +1,36 @@
+<button class="nuevo-usuario-btn" (click)="openDialogWithTemplate(template2)">Vincular nuevo servicio</button>
+
+<ng-template #template2>
+  <h1 mat-dialog-title class="header-modal">Asignar un nuevo servicio<hr></h1>
+  <p class="info">En esta ventana podrás asignarle un servicio a un estilista</p>
+
+  <div mat-dialog-content class="custom-dialog-content">
+    <form [formGroup]="servicio">
+      <div class="input__checkbox">
+        <label for="checkbox1"><input type="checkbox" name="" id="checkbox1">
+          <img src="assets/img/estilista.webp" alt=""><span>Samanta perez</span>
+          Estilista
+        </label>
+        <label for="checkbox2"><input type="checkbox" name="" id="checkbox2">
+          <img src="assets/img/estilista.webp" alt=""><span>Samanta perez</span>
+          Estilista
+        </label>
+        <label for="checkbox3"><input type="checkbox" name="" id="checkbox3">
+          <img src="assets/img/estilista.webp" alt=""><span>Samanta perez</span>
+          Estilista
+        </label>
+      </div>
+      <div class="select">
+        <select class="dropdown" name="Selecciona un servicio"   id="">
+          <option selected disabled>Seleccionar un servicio</option>
+          <option value="">Cepillado de cabello</option>
+          <option value="">Corte de cabello</option>
+        </select>
+      </div>
+      <div>
+  <div class="Botones" mat-dialog-actions>
+    <button class="crear" mat-button (click)="onSave()">Guardar</button>
+    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+  </div>
+
+
