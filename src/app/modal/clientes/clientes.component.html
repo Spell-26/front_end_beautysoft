@@ -6,7 +6,6 @@
   <div class="info">
    <p>En esta ventana podrás crear un nuevo cliente.</p>
   </div>
- 
    <div mat-dialog-content class="custom-dialog-content">
      <form [formGroup]="formGroup">
        <div class="select">
@@ -19,9 +18,12 @@
            El apelldio es requerido.
          </span>
          <input type="text" placeholder="Télefono:" formControlName="telefono" name="" id="">
-         <span class="span" *ngIf="formGroup.get('telefono')?.invalid && formGroup.get('telefono')?.touched">
+         <span class="span" *ngIf="formGroup.get('telefono')?.hasError('required') && formGroup.get('telefono')?.touched">
            El télefono es requerido y debe ser valido.
          </span>
+         <span class="span" *ngIf="formGroup.get('telefono')?.hasError('pattern')">
+          Solo debe ser número 
+        </span>
 
          <input type="text" placeholder="Dirección:" formControlName="direccion" name="" id="">
          <span class="span" *ngIf="formGroup.get('direccion')?.invalid && formGroup.get('direccion')?.touched">

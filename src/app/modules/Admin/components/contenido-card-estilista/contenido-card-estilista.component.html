@@ -66,7 +66,7 @@
   <div mat-dialog-content class="custom-dialog-content">
     <form [formGroup]="formGroup">
       <div class="select">
- 
+
         <input type="email" placeholder="Email"  formControlName="email" name="" id="">
         <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
           El email es requerido y debe ser válido

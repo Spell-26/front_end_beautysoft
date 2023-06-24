@@ -11,8 +11,6 @@
   <div class="info-seccion">
     <p>{{ayuda}}</p>
   </div>
-
-
   <div class="card__profile" [ngSwitch]="nombreSeccion">
     <app-contenido-card-usuario *ngSwitchCase="'Usuarios'"></app-contenido-card-usuario>
     <app-contenido-card-rol *ngSwitchCase="'Roles'"></app-contenido-card-rol>
@@ -23,8 +21,6 @@
       <app-contenido-card-citas *ngSwitchCase="'Citas'"></app-contenido-card-citas>
       <app-contenido-servicio-por-estilista *ngSwitchCase="'Servicio por estilista'"></app-contenido-servicio-por-estilista>
       <app-contenido-card-disponiblidad *ngSwitchCase="'Disponibilidades'"></app-contenido-card-disponiblidad>
-
-
   </div>
 </section>
 

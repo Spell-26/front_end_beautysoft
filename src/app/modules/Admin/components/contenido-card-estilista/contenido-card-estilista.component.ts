@@ -20,7 +20,7 @@ export class ContenidoCardEstilistaComponent {
 
 
  formGroup: FormGroup = this.formBuilder.group({
-  Gmail:['',Validators.email]
+  email:['',Validators.email]
 
  });
  constructor(private dialogService:DialogService,  private formBuilder: FormBuilder ){}
@@ -45,11 +45,16 @@ export class ContenidoCardEstilistaComponent {
    })
  }
 
- onSave(){
-   console.log(this.formGroup.value);
-   this.formGroup.reset()
-   this.matDialogRef.close()
- }
+ onSave() {
+  if (this.formGroup.valid) {
+    console.log(this.formGroup.value);
+    this.formGroup.reset();
+    this.matDialogRef.close();
+  } else {
+    // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
+    //utilizar libreria snackbar para mostrar un error en un tiempo definido
+  }
+}
   protected estado:boolean = true;
   protected textoEstado:string ="Activo";
 
