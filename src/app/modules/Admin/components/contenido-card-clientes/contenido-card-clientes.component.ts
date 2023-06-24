@@ -1,16 +1,30 @@
-import { Component, TemplateRef } from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {ClienteService} from "../../../../service/cliente/cliente.service";
 
 @Component({
   selector: 'app-contenido-card-clientes',
   templateUrl: './contenido-card-clientes.component.html',
   styleUrls: ['./contenido-card-clientes.component.css']
 })
-export class ContenidoCardClientesComponent {
- //editar boton
+export class ContenidoCardClientesComponent implements OnInit{
+
+  //almacenar clientes provenientes del query
+  clientes : any[] = [];
+  constructor(private dialogService:DialogService, private formBuilder: FormBuilder, private clienteService: ClienteService  ){}
+
+  ngOnInit(): void {
+    this.clienteService.GetAllClientes().subscribe((cliente: {count:Number, clientes:any[]}) => {
+      this.clientes = cliente.clientes;
+      console.log(this.clientes);
+    });
+  }
+
+
+  //editar boton
 
  private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
@@ -20,7 +34,7 @@ export class ContenidoCardClientesComponent {
 
  })
 
- constructor(private dialogService:DialogService, private formBuilder: FormBuilder  ){}
+
 
  openDialogCustom(){
    this.dialogService.openDialogCustom({

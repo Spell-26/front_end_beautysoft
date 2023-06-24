@@ -1,4 +1,13 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
 .container-info{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -252,4 +261,12 @@
 
 .nuevo-usuario:hover{
   background-color: #ef950c;
+}
+
+.paginacion{
+  width: 100%;
+  text-align: center;
+}
+.paginacion div span{
+  margin: .5em;
 }

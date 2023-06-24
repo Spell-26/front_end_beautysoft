@@ -11,9 +11,9 @@ import { MatCardModule } from '@angular/material/card';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-import { CardComponent } from './modules/Admin/components';
+import {CardComponent, HeaderAdminComponent} from './modules/Admin/components';
 import { ContenidoCardUsuarioComponent } from './modules/Admin/components';
-import { HeaderAdminComponent } from './modules/Admin/components';
+
 import { UsuariosAdminComponent } from './modules/Admin/components';
 import { RolesAdminComponent } from './modules/Admin/components';
 //check box
@@ -54,6 +54,9 @@ import { TurnosComponent } from './modal/turnos/turnos.component';
 import { ContenidoCardDisponiblidadComponent } from './modules/Admin/components/contenido-card-disponiblidad/contenido-card-disponiblidad.component';
 import { DisponibilidadesModalComponent } from './modal/disponibilidades-modal/disponibilidades-modal.component';
 import { CitaModalComponent } from './modal/cita-modal/cita-modal.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AdministradorModule} from "./modules";
+import {AdminClientesComponent} from "./modules/Admin/components/admin-clientes/admin-clientes.component";
 
 
 
@@ -63,7 +66,6 @@ import { CitaModalComponent } from './modal/cita-modal/cita-modal.component';
     AppComponent,
     CardComponent,
     ContenidoCardUsuarioComponent,
-    HeaderAdminComponent,
     UsuariosAdminComponent,
     RolesAdminComponent,
     ContenidoCardRolComponent,
@@ -95,7 +97,10 @@ import { CitaModalComponent } from './modal/cita-modal/cita-modal.component';
     DisponibilidadAdminComponent,
     ContenidoCardDisponiblidadComponent,
     DisponibilidadesModalComponent,
-    CitaModalComponent
+    CitaModalComponent,
+    HeaderAdminComponent,
+    AdminClientesComponent
+
 
 
   ],
@@ -119,7 +124,9 @@ import { CitaModalComponent } from './modal/cita-modal/cita-modal.component';
 
     //importacion para el modal
     MatDialogModule,
-    MenuLateralComponent
+    MenuLateralComponent,
+    HttpClientModule,
+    AdministradorModule
 
 
   ],

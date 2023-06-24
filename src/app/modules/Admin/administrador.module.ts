@@ -6,18 +6,18 @@ import {MenuLateralComponent, ProximasCitasComponent} from "./components";
 import { LoginComponent } from './login/login.component';
 
 
+
 @NgModule({
   declarations: [
     AdministradorComponent,
     LoginComponent,
-
 
   ],
   imports: [
     CommonModule,
     AdministradorRoutingModule,
     MenuLateralComponent,
-    ProximasCitasComponent,
+    ProximasCitasComponent
 
   ]
 })

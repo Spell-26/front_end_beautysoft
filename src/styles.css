@@ -42,3 +42,21 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 
+/* ESTILOS GENERALES ADMINISTRADOR */
+/* CARDS */
+
+.card_profile{
+  display: flex;
+  background: rgb(211, 211, 211, 1);
+  width: 25%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(109, 109, 109) ;
+  margin: 1em;
+}
+
+.card_profile:hover{
+  background: linear-gradient(180deg, rgba(211,211,211,1) 45%, rgba(195,91,70,1) 100%);
+
+}
+
