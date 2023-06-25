@@ -33,6 +33,8 @@ import { ContenidoCardCitasComponent } from './modules/Admin/components/contenid
 //librerias para el dropdown de header
 
 
+
+
 //librerias para los inputs
 
 import { MatInputModule } from '@angular/material/input';
@@ -58,6 +60,7 @@ import { ServiciosModalComponent } from './modal/servicios-modal/servicios-modal
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AdministradorModule} from "./modules";
 import {AdminClientesComponent} from "./modules/Admin/components/admin-clientes/admin-clientes.component";
+import { Grafica1Component } from './modules/Admin/components/grafica1/grafica1.component';
 
 
 
@@ -101,7 +104,8 @@ import {AdminClientesComponent} from "./modules/Admin/components/admin-clientes/
     CitaModalComponent,
     ServiciosModalComponent,
     HeaderAdminComponent,
-    AdminClientesComponent
+    AdminClientesComponent,
+
 
 
 
@@ -118,6 +122,7 @@ import {AdminClientesComponent} from "./modules/Admin/components/admin-clientes/
     MatCheckboxModule,
     MatSnackBarModule,
     MatCardModule,
+
 
 
     //librerias para los formularios

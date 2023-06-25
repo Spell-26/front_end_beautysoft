@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { ServicioPorEstilistaAdminComponent } from './components/servicio-por-estilista-admin/servicio-por-estilista-admin.component';
 import { DisponibilidadAdminComponent } from './components/disponibilidad-admin/disponibilidad-admin.component';
 import {AdminClientesComponent} from "./components/admin-clientes/admin-clientes.component";
+import { Grafica1Component } from './components/grafica1/grafica1.component';
 
 
 //router
@@ -19,6 +20,10 @@ const routes: Routes=[
   //ruta a usuarios
   {path: 'login', component: LoginComponent},
   //en component se pone el nombre del component tal y como aparace abajo en declarations
+
+  ///ruta de dashboard
+  {path: 'dashboard', component: Grafica1Component },
+
   {path:'usuarios', component:UsuariosAdminComponent},
   //ruta a roles
   {path:'roles', component:RolesAdminComponent},
