@@ -15,13 +15,13 @@ export class ClientesComponent {
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = this.formBuilder.group({
-    name: ['', Validators.required],
-    lastname: ['', Validators.required],
+    nombre: ['', Validators.required],
+    apellido: ['', Validators.required],
     telefono:new FormControl('',[Validators.required,Validators.pattern('^[0-9]{10}$')]),
     direccion:['',Validators.required],
-    Gmail: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.email]],
     contraseña: ['', Validators.required],
-    ConfirmContraseña: ['', Validators.required]
+    confirmar: ['', Validators.required]
   });
 
   constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}
@@ -46,18 +46,17 @@ export class ClientesComponent {
 
 
   onSave() {
-    if (this.formGroup.valid) {
-      console.log(this.formGroup.value);
-      this.formGroup.reset();
-      this.matDialogRef.close();
-    } else {
-      // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
-      //utilizar libreria snackbar para mostrar un error en un tiempo definido
+    if (this.formGroup.invalid) {
       Swal.fire({
         title:'error',
         text: 'Las validaciones se encuentran mal'
       })
-    }
+      return
+    } 
+    console.log(this.formGroup.value);
+    this.formGroup.reset();
+    this.matDialogRef.close();
+
   }
 
   estado = true;

@@ -1,5 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogService } from 'src/app/service/dialog.service';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
@@ -16,15 +16,13 @@ export class ContenidoCardUsuarioComponent {
 
   private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
-  formGroup: FormGroup = new FormGroup({
-    name: new FormControl(),
-    lastname: new FormControl(),
-    Gmail: new FormControl(),
-    contraseña: new FormControl(),
-    ConfirmContraseña: new FormControl()
-  })
+  
+  formGroup: FormGroup = this.formBuilder.group({
+    email: ['', [Validators.required, Validators.email]],
+  });
 
-  constructor(private dialogService:DialogService, ){}
+  constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}
+
 
   openDialogCustom(){
     this.dialogService.openDialogCustom({
@@ -46,10 +44,15 @@ export class ContenidoCardUsuarioComponent {
     })
   }
 
-  onSave(){
-    console.log(this.formGroup.value);
-    this.formGroup.reset()
-    this.matDialogRef.close()
+  onSave() {
+    if (this.formGroup.valid) {
+      console.log(this.formGroup.value);
+      this.formGroup.reset();
+      this.matDialogRef.close();
+    } else {
+      // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
+      //utilizar libreria snackbar para mostrar un error en un tiempo definido
+    }
   }
 
 

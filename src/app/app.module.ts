@@ -54,6 +54,7 @@ import { TurnosComponent } from './modal/turnos/turnos.component';
 import { ContenidoCardDisponiblidadComponent } from './modules/Admin/components/contenido-card-disponiblidad/contenido-card-disponiblidad.component';
 import { DisponibilidadesModalComponent } from './modal/disponibilidades-modal/disponibilidades-modal.component';
 import { CitaModalComponent } from './modal/cita-modal/cita-modal.component';
+import { ServiciosModalComponent } from './modal/servicios-modal/servicios-modal.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AdministradorModule} from "./modules";
 import {AdminClientesComponent} from "./modules/Admin/components/admin-clientes/admin-clientes.component";
@@ -98,6 +99,7 @@ import {AdminClientesComponent} from "./modules/Admin/components/admin-clientes/
     ContenidoCardDisponiblidadComponent,
     DisponibilidadesModalComponent,
     CitaModalComponent,
+    ServiciosModalComponent,
     HeaderAdminComponent,
     AdminClientesComponent
 

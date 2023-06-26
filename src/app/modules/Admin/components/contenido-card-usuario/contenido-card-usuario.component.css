@@ -119,35 +119,29 @@
   flex-direction: column;
   margin-bottom: 0.5em;
 }
-.info-head h2, .info-head span{
-  display: inline-block;
-  width: 100%;
-
-}
-.info-head h2{
-  margin: 0.5em 0 0 0;
-}
 
 
 
-.email-form{
-  width: 100%;
-  margin-top: 30px;
-}
+
+
 
 /* texto de la cabecera del modal */
 .header-modal{
+  font-weight: bold;
   text-align: center;
 }
+hr{
+  width: 80%;
+  margin: auto;
+}
 
-/* texto de informacion */
 .info{
   background-color: #6BCEE3;
   border-radius: 15px;
   text-align: center;
   width: 80%;
   color:#5305FA;
-  margin: 0 100px 0 40px;
+  margin: auto;
 }
 
 
@@ -159,24 +153,14 @@
 }
 
 
-/* botones de guardar y cancelar */
-.Botones{
-  display: flex;
-  justify-content: space-around;
-  margin-top: -42px;
-}
-
-.Botones-eliminar{
-  display: flex;
-  justify-content: space-around;
-  margin-top: -230px;
-}
-
-
+/* botones de guardar */
 
 .crear{
-  width: 100px;
+  width: 80%;
   height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
   background-color: #74337F;
   border-radius: 8px;
   color: white;
@@ -188,6 +172,27 @@
 .crear:hover{
   background: #56245f;
 
+
+
+}
+/*Botones de eliminar y cancelar*/
+.Botones-eliminar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.eliminar__crear,
+.cancelar{
+  background-color:  #74337F ;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  box-shadow: 2px 2px 5px #5b5a5a;
+  cursor: pointer;
+}
+.cancelar{
+  background-color: red;
 }
 
 .cancelar:hover{
@@ -195,46 +200,51 @@
 
 }
 
-
-.cancelar{
-  width: 100px;
-  height: 40px;
-  background-color: red;
-  border-radius: 8px;
-  color: white;
-  margin: 10px 30px 10px 10px;
-  border: none;
-  box-shadow: 2px 2px 5px #5b5a5a;
-  cursor: pointer;
+.eliminar__crear:hover{
+  background: #56245f;
 }
+
+
 
 /* tamaño del modal */
 
 .custom-dialog-content {
   width: 500px; /* Ajusta el ancho según tus necesidades */
-  height: 300px; /* Ajusta la altura según tus necesidades */
-}
-
-
-.texto-politicas{
-  width: 365px;
-  margin-left: 100px;
-  text-align: justify;
+  border-radius: 10px ;
 
 }
 
-.boton-estado{
-  margin-top: 30px;
+
+
+.boton__estado{
+  font-weight: bold;
+  margin-left:45px;
+  margin-top: 40px
+}
+
+.estado-hijo{
+  width: 40%;
+  height: 1.5em;
+  border-radius: 10px;
+  padding: 3px;
+  border: 2px solid green;
+  color: green;
+
+  text-align: center;
+  cursor: pointer;
 }
 
 
-.caja-estado{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: baseline;
+.estado-hijo-click{
+  width: 35%;
+  height: 1.5em;
+  padding: 3px;
+  border-radius: 10px;
+  color: red;
+  border: 2px solid orangered;
+  text-align: center;
+  cursor: pointer;
 }
-
 
 
 
@@ -262,7 +272,61 @@
 .nuevo-usuario:hover{
   background-color: #ef950c;
 }
+.select{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+}
 
+
+
+
+/**Estilos para los input de fecha y hora cuando cambiam*/
+input[type="email"]{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 15px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid  rgba(164, 119, 90, 1);
+}
+
+.custom-dialog-content {
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+ /* Ajusta la altura según tus necesidades */
+}
+
+.span{
+  margin-left: 50px;
+  color: red;
+  margin-bottom: 6px;
+  font-size: small;
+}
+
+.texto-politicas{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.paginacion{
+  width: 100%;
+  text-align: center;
+}
+.paginacion div span{
+  margin: .5em;
+}
+
+.texto-politicas{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
 .paginacion{
   width: 100%;
   text-align: center;

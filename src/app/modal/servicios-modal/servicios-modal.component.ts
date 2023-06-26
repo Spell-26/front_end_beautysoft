@@ -1,21 +1,22 @@
 import { Component, TemplateRef } from '@angular/core';
-import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, Validators, FormGroup} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-cita-modal',
-  templateUrl: './cita-modal.component.html',
-  styleUrls: ['./cita-modal.component.css']
+  selector: 'app-servicios-modal',
+  templateUrl: './servicios-modal.component.html',
+  styleUrls: ['./servicios-modal.component.css']
 })
-export class CitaModalComponent {
+export class ServiciosModalComponent {
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = this.formBuilder.group({
-    desplegable: ['', Validators.required],
-    fecha: ['', Validators.required],
-    hora: ['', Validators.required]
+    nombre:['', Validators.required],
+    duracion: ['', Validators.required],
+    valor:['',Validators.required]
   });
 
   constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}
@@ -47,7 +48,10 @@ export class CitaModalComponent {
     } else {
       // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
       //utilizar libreria snackbar para mostrar un error en un tiempo definido
-
+      Swal.fire({
+        title:'error',
+        text: 'Las validaciones se encuentran mal'
+      })
     }
   }
 

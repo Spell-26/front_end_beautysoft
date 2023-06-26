@@ -7,6 +7,9 @@
               <span>
                   {{textoEstado}}
               </span>
+    </div>
+
+    <div class="editar" (click)="mostrarBurbuja()">
         </div>
         <div class="editar" (click)="mostrarBurbuja()">
       <span class="material-symbols-outlined">
@@ -30,6 +33,7 @@
         <p>Correo: arleycastaneda22@gmail.com</p>
       </div>
     </div>
+
   </div>
 
   <div class="paginacion">
@@ -54,7 +58,7 @@
 </div>
 
 <div class="Botones-eliminar" mat-dialog-actions>
-    <button class="crear" mat-button (click)="onSave()">Continuar</button>
+    <button class="eliminar__crear" mat-button (click)="onSave()">Continuar</button>
     <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
 </div>
 
@@ -64,50 +68,37 @@
 <app-modal></app-modal>
 
 
-
-
-
-
-
-
-
-
-
 <!-- contenido del template -->
 
 
 <ng-template #template2>
-
-  <h1 mat-dialog-title class="header-modal">Actualizar Usuarios<hr></h1>
-
-
-  <p class="info">En esta ventana Podrás actualizar la información de un Usuario ya existente</p>
-
-<div mat-dialog-content class="custom-dialog-content">
-    <p style="font-weight: bold;">Correo Electronico: </p>
-    <mat-form-field class="email-form">
-      <input matInput placeholder="Email" value="arleycastaneda22@gmail.com"  formControlName="Gmail">
-    </mat-form-field>
-
-    <div class="caja-estado">
-    <p style="font-weight: bold;">Estado: </p>
-    <div id="estado" class="boton-estado">
-      <div style="margin-right: 200px;" (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
-                <span>
-                    {{textoEstado}}
-                </span>
-      </div>
-    </div>
+  <h1 mat-dialog-title class="header-modal">Actualizar un usuario<hr></h1>
+  <div class="info">
+   <p>En esta ventana podrás actualizar un usuario</p>
   </div>
 
-</div>
+   <div mat-dialog-content class="custom-dialog-content">
+     <form [formGroup]="formGroup">
+       <div class="select">
 
-<div class="Botones" mat-dialog-actions>
-    <button class="crear" mat-button (click)="onSave()">Guardar</button>
-    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
-</div>
-
-<div class="texto-politicas">
-<p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>
-</div>
+         <input type="email" placeholder="Email"  formControlName="email" name="" id="">
+         <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+           El email es requerido y debe ser válido
+         </span>
+       </div>
+     <div>
+       <div class="estado">
+           <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+             {{textoEstado}}
+           </span></p>
+         </div>
+       </div>
+       <div class="Botones" mat-dialog-actions>
+         <button class="crear" (click)="onSave()">Guardar</button>
+       </div>
+       <div class="texto-politicas">
+         <p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>
+       </div>
+     </form>
+   </div>
 </ng-template>

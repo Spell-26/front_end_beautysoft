@@ -10,28 +10,34 @@
   <div mat-dialog-content class="custom-dialog-content">
     <form [formGroup]="formGroup">
       <div class="select">
-        <select class="dropdown" name="" id="">
+        <select class="dropdown"  name="" id="">
           <option value="" selected disabled>Servicio</option>
           <option value="" >Corte de cabello</option>
           <option value="" >Cepillado de cabello</option>
         </select>
-        <input type="text" placeholder="Fecha" onfocus="(this.type='date')" name="" id=""><br>
-        <input type="text" placeholder="Hora" onfocus="(this.type='time')" name="" id="">
+        <span class="span" *ngIf="formGroup.get('valor')?.invalid && formGroup.get('valor')?.touched">
+          El valor es requerido
+        </span>
+        <input type="text" placeholder="Fecha" formControlName="fecha" onfocus="(this.type='date')" name="" id=""><br>
+        <span class="span" *ngIf="formGroup.get('fecha')?.invalid && formGroup.get('fecha')?.touched">
+          La fecha es requeridad
+        </span>
+        <input type="text" placeholder="Hora" formControlName="hora" onfocus="(this.type='time')" name="" id="">
+        <span class="span" *ngIf="formGroup.get('hora')?.invalid && formGroup.get('hora')?.touched">
+          La hora es requeridad
+        </span>
       </div>
-    <div>
-        <p style="font-weight: bold; margin-right: 200px; margin-top: 10px;">Estado: </p>
-        <div id="estado">
-          <div style="margin-right: 200px;" (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
-            <span>
+      <div>
+        <div class="estado">
+            <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
               {{textoEstado}}
-            </span>
+            </span></p>
           </div>
         </div>
-      </div>
     </form>
   </div>
   <div class="Botones" mat-dialog-actions>
-    <button class="crear" mat-button (click)="onSave()">Crear cita</button>
-    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+    <button class="crear" mat-button (click)="onSave()">Guardar</button>
+  </div>
 
 

@@ -10,17 +10,46 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class HeaderAdminComponent {
   showNotifications = false;
 
-  constructor(private snackBar: MatSnackBar) {}
 
-  openNotifications() {
-    this.showNotifications = !this.showNotifications;
 
-    // Opcional: Mostrar una notificación simple
-    if (this.showNotifications) {
-      this.snackBar.open('Tienes nuevas notificaciones', 'Cerrar', {
-        duration: 3000, // Duración en milisegundos
-      });
+  protected estado:boolean = true;
+  protected textoEstado:string ="Activo";
+
+  protected cambiarEstado():void{
+    this.estado = !this.estado;
+
+    if(this.estado){
+      this.textoEstado = "Activo";
     }
+    else{
+      this.textoEstado = "Inactivo";
+    }
+  }
+
+  protected editar_collapsed:boolean = true;
+  protected ocultar_opciones:boolean = true;
+
+
+  mostrarBurbuja():void {
+    this.editar_collapsed = !this.editar_collapsed;
+    this.mostrarOpciones();
+  }
+  mostrarOpciones():void{
+    if (!this.editar_collapsed){
+      try{
+        setTimeout(() =>{
+            this.ocultar_opciones = !this.ocultar_opciones;
+          }, 800
+        );
+      }
+      catch (e) {
+        console.log(e);
+      }
+    }
+    else{
+      this.ocultar_opciones = !this.ocultar_opciones;
+    }
+
   }
 
 }
