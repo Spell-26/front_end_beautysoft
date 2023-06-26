@@ -1,0 +1,57 @@
+<div class="modal">
+  <div class="modal_body">
+    <header class="header_modal">
+      <div class="cerrar">
+        <span (click)="closeModal()">x</span>
+      </div>
+      <div class="titulo_modal">
+        <h2>Crear una nueva cita</h2>
+      </div>
+      <div class="info">
+        <p>En esta ventana podrás crear una nueva cita. Para hacerlo sigue los siguientes pasos:</p>
+        <ol>
+          <li>Selecciona el servicio que deseas, luego la fecha y la hora.</li>
+          <li>A continuación aparecerá un listado con los estilistas disponibles.</li>
+          <li>Una vez creada tu cita te enviaremos un emai. En el cual podrás confirmar tu cita, en caso de no hacerlo,
+          se cancelará tu reserva 24 horas despúes de la creación.</li>
+        </ol>
+      </div>
+    </header>
+      <form class="form_body" [formGroup]="formulario" >
+        <div *ngIf="parteUnoModal">
+          <select formControlName="servicio" id="servicio">
+            <option *ngFor="let s of servicios" value="{{s.id_servicio}}">{{s.nombre_servicio}}</option>
+          </select>
+          <input type="time" formControlName="hora" id="hora">
+          <input type="date" formControlName="fecha" id="fecha">
+
+          <button class="btn_continuar"  (click)="goToParteDos()">
+            <span>Continuar</span>
+          </button>
+        </div>
+        <div *ngIf="parteDosModal">
+          <select formControlName="cliente" id="servicio">
+          <option *ngFor="let c of clientes" value="{{c.id}}">{{c.nombre}}</option>
+         </select>
+          <select formControlName="disponibilidad" id="servicio">
+            <option *ngFor="let d of disponibilidades" value="{{d.id_disponibilidad_estilista}}">{{d.hora_inicio}}{{d.hora_fin}}</option>
+          </select>
+          <button class="btn_continuar" (click)="goToParteTres()">
+            <span>Continuar</span>
+          </button>
+        </div>
+        <div *ngIf="parteTresModal">
+          <h1>parte 3</h1>
+          <button class="btn_continuar" type="submit" (click)="finalizarCrearCita()">
+            <span>Continuar</span>
+          </button>
+        </div>
+      </form>
+
+
+
+    <footer class="footer">
+      <p>La duración de los servicios y la estimación de sus precios son solamente aproximaciones, estos pueden variar dependiendo de diversas situaciones.</p>
+    </footer>
+  </div>
+</div>

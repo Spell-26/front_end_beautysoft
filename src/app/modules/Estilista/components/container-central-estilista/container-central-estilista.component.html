@@ -7,15 +7,12 @@
       <input type="text" required>
       <span class="placeholder-busqueda">Búsqueda</span>
     </div>
-    <div class="nueva-cita">
+    <div class="nueva-cita" (click)="abrirModal()">
       <span>Nueva cita</span>
     </div>
   </div>
   <div class="contenedor-interno">
     <app-card-cita></app-card-cita>
-    <app-card-cita></app-card-cita>
-    <app-card-cita></app-card-cita>
-    <app-card-cita></app-card-cita>
-    <app-card-cita></app-card-cita>
   </div>
 </div>
+<app-modal-nueva-cita *ngIf="modalState == true"></app-modal-nueva-cita>
