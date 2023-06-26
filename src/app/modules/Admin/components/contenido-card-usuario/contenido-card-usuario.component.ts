@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogService } from 'src/app/service/dialog.service';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
+import { UsuariosService } from 'src/app/service/adminServices/usuarios.service';
 
 
 @Component({
@@ -16,12 +17,12 @@ export class ContenidoCardUsuarioComponent {
 
   private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
-  
+
   formGroup: FormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
   });
 
-  constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}
+  constructor(private dialogService: DialogService, private formBuilder: FormBuilder, private UsuarioServicio: UsuariosService) {}
 
 
   openDialogCustom(){
@@ -99,4 +100,15 @@ export class ContenidoCardUsuarioComponent {
     }
 
   }
+        //usuarios
+
+    usuarios: any [] = [];
+
+ ngOnInit():void{
+  this.UsuarioServicio.getAllUsuarios().subscribe((usuario:{count: number,usuarios: any[] })=>{
+    this.usuarios = usuario.usuarios
+    console.log(this.usuarios)
+  })
+ }
+
 }

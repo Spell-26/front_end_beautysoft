@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <div class="container">
-  <div class="card_profile">
+  <div class="card_profile" *ngFor="let u of usuarios">
     <div class="container-info">
       <div id="estado">
         <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
@@ -25,12 +25,12 @@
       </div>
       <img src="/assets/img/card_user.jpg" alt="">
       <div class="info-head">
-        <h2>James Sánchez</h2>
-        <span>Usuario</span>
+        <h2>{{u.nombre}} {{u.apellido}}</h2>
+        <span>usuario</span>
       </div>
       <div class="card__datos">
-        <p>Fecha de creación: 02/06/2023</p>
-        <p>Correo: arleycastaneda22@gmail.com</p>
+        <p>{{u.creacion}}</p>
+        <p>{{u.correo_usuario}}</p>
       </div>
     </div>
 
