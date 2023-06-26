@@ -14,15 +14,38 @@ export class ClienteService {
   //obtener todos los clientes en la bd
   //el argumento (numeroDeResultados:number = 6) es un parametro que declare en el backend como endpoint
   //el observable es el tipo de dato que devuelve el backend
-  GetAllClientes(numeroDeResultados:number = 6) : Observable<any>{
-    return this.http.get('/api/clientes', {
-      //este params es el que va a recibir el 6 que estoy pasando como parametro
-      //y lo manda como header
-      //asi => http://localhost:3000/api/clientes?limit=6
-      //el toString es porque el header solo recibe formato texto yo le estoy pasando un numero, debo convertirlo.
-      params:{
-        limit: numeroDeResultados.toString()
-      }
-    });
+
+   //obtener todos los clientes en la bd
+  GetAllClientes() : Observable<any>{
+    return this.http.get('/api/clientes')
   }
+//Obtener un cliente
+  getOneCliente(id:string): Observable<any>{
+    return this.http.get('/api/clientes' + '/' + id);
+  }
+//Adiconar cliente
+  addCliente(cliente:any) : Observable<any>{
+    return this.http.get('/api/clientes', cliente);
+
+  }
+  //Eliminar cliente
+  deleteCliente(id:string): Observable<any>{
+    return this.http.delete('/api/clientes' + '/' + id);
+  }
+
+  //Actualizar cliente
+  updateCliente(id:string, cliente: clientes) : Observable<any>{
+    return this.http.put('/api/clientes' + '/' + id, cliente);
+  }
+
+}
+
+export interface clientes{
+  id_cliente: string;
+  nombre: string;
+  apellido: string;
+  nombre_rol:string;
+  correo_cliente: string;
+  telefono: string;
+  direccion: string
 }

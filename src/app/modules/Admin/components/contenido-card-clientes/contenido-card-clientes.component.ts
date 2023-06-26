@@ -3,7 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {ClienteService} from "../../../../service/cliente/cliente.service";
+import {ClienteService, clientes} from "../../../../service/cliente/cliente.service";
 
 @Component({
   selector: 'app-contenido-card-clientes',
@@ -13,25 +13,22 @@ import {ClienteService} from "../../../../service/cliente/cliente.service";
 export class ContenidoCardClientesComponent implements OnInit{
 
   //almacenar clientes provenientes del query
-  clientes : any[] = [];
+  clientes : clientes[] = [];
   //en el constructor incluyo el servicio que hace las peticiones al backend
   constructor(private dialogService:DialogService, private formBuilder: FormBuilder, private clienteService: ClienteService  ){}
   //Funcion de Angular, ejecuta la funcion antes de cargar el componente
   ngOnInit(): void {
-    //Funcion del servicio que importamos en el constructor
-    //nos trae todos los registros de clientes
-    //cliente: {count:Number,  clientes:anu[]} es para hacer una desnormalizacion del json que nos manda el backend
-    //Y hacer mas sencillo el recorrido
-    //.subscribe es parte de la pedicion no le presten atencion pero se debe incluir
-    this.clienteService.GetAllClientes().subscribe((cliente: {count:Number, clientes:any[]}) => {
-      //almaceno la respuesta en el array que tenia preparado desde antes
-      //Guardo lo unico que me interesa de la desnormalizacion
-      //Aunque tambien puedo guardar el count si quiero saber cuantos registros trajo la consulta
-      //ejemplo: this.numeroResultados = cliente.count;
-      this.clientes = cliente.clientes;
-      console.log(this.clientes);
-    });
+    this.listar()
   }
+
+
+
+  listar(){
+    this.clienteService.GetAllClientes().subscribe((clientes:{message:any[]})=>{
+      this.clientes=clientes.message
+      console.log(this.clientes);
+    }
+    )}
 
 
   //editar boton

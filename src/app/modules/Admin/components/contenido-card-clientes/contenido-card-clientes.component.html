@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <div class="container">
-  <div class="card_profile" *ngFor="let c of clientes">
+  <div class="card_profile" *ngFor="let c of clientes ">
     <div class="container-info">
       <div class="estado">
         <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
@@ -24,17 +24,15 @@
       <img src="/assets/img/card_user.jpg" alt="">
       <div class="info-head">
         <h2>{{c.nombre}} {{c.apellido}}</h2>
-        <span>{{c.rol}}</span>
+        <span>{{c.nombre_rol}}</span>
       </div>
       <div class="card__datos">
-        <p>Fecha de creación: {{c.fecha_creacion}}</p>
-        <p>Télefono: {{c.telefono}}</p>
-        <p>Correo: {{c.correo}}</p>
+        <p>Télefono: {{c.telefono}} </p>
+        <p>Correo: {{c.correo_cliente}} </p>
         <p>Dirección: {{c.direccion}}</p>
       </div>
     </div>
   </div>
-
   <div class="paginacion">
       <div>
         <span>1</span>
