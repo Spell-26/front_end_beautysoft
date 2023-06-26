@@ -8,7 +8,7 @@ import {ModalNuevaCitaService} from "../../../../service/estilistaServices/citas
 })
 export class ContainerCentralEstilistaComponent {
 
-  modalState:boolean = true;
+  modalState:boolean = false;
 
   constructor( private modalService: ModalNuevaCitaService) {
   }

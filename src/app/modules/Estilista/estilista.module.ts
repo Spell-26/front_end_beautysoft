@@ -10,6 +10,7 @@ import { MapaDisponibilidadesComponent } from './components/mapa-disponibilidade
 import { ProximasCitasComponent } from './components/proximas-citas/proximas-citas.component';
 import { CardCitaComponent } from './components/card-cita/card-cita.component';
 import { ModalNuevaCitaComponent } from './components/modal-nueva-cita/modal-nueva-cita.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -27,9 +28,12 @@ import { ModalNuevaCitaComponent } from './components/modal-nueva-cita/modal-nue
     ModalNuevaCitaComponent,
 
   ],
-  imports: [
-    CommonModule,
-    EstilistaRoutingModule,
-  ]
+    imports: [
+        CommonModule,
+        EstilistaRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+
+    ]
 })
 export class EstilistaModule { }

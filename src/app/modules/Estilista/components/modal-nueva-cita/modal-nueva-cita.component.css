@@ -11,7 +11,7 @@
 
 }
 .modal_body{
-  width: 27%;
+  width: 30%;
   height: 70%;
   background-color: #fff;
   margin: auto;
@@ -19,6 +19,7 @@
   box-shadow: 5px 5px 5px rgba(94, 93, 93, 0.7);
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 .header-modal{
   display: flex;
@@ -37,4 +38,76 @@
 }
 .cerrar span:hover{
   color: red;
+}
+.titulo_modal{
+  width: 100%;
+}
+.titulo_modal h2{
+  font-weight: bold;
+  font-size: 1.7em;
+}
+.info{
+  width: 90%;
+  background-color: #6acde2;
+  color: #5305fa;
+  padding: 1em;
+  margin: 0 auto 1em auto;
+  font-size: .8em;
+  text-align: left;
+  border-radius: 10px;
+}
+.info ol{
+  padding: 0 .5em;
+}
+
+.form_body{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#servicio, #hora, #fecha{
+ padding: 1em;
+  width: 70%;
+  margin: 0 auto 1em auto;
+  border: 2px solid #a3765a;
+  border-radius: 6px;
+}
+.continuar{
+  width: 100%;
+}
+.btn_continuar{
+  width: 40%;
+  background: linear-gradient(180deg, rgba(116,51,127,1) 0%, rgba(141,83,157,1) 100%);
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.5em;
+  padding: 1em;
+  border-radius: 16px;
+  cursor: pointer;
+  border: none;
+}
+.footer{
+  margin: 1em auto 0 auto;
+  font-size: .8em;
+  width: 70%;
+  color: #808080;
+  text-align: center;
+}
+
+
+/* Estilos de la barra de desplazamiento principal*/
+*::-webkit-scrollbar{
+  width: 1em;
+
+}
+*::-webkit-scrollbar-track{
+  margin-block: .5em;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(197,92,69,0.2) 0%, rgba(106,46,134,0.2) 100%);
+  border: .15em solid rgb(255, 255, 255);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(180deg, rgba(197,92,69,1) 0%, rgba(106,46,134,1) 100%);
 }

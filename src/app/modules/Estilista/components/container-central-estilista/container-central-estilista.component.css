@@ -66,6 +66,7 @@
   color: white;
   border-radius: .5em;
   box-shadow: 2px 2px 5px #6b6a6a;
+  cursor: pointer;
 }
 .contenedor-interno{
   margin-top: 1em;

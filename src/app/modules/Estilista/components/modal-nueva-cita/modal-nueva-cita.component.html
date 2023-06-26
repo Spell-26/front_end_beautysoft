@@ -17,20 +17,39 @@
         </ol>
       </div>
     </header>
-    <div class="form">
-      <form >
-        <select name="servicio" id="">
-          <option>servicio prueba</option>
-        </select>
-        <input type="datetime" name="fecha" id="" placeholder="Fecha y hora">
-      </form>
-    </div>
+      <form class="form_body" [formGroup]="formulario" >
+        <div *ngIf="parteUnoModal">
+          <select formControlName="servicio" id="servicio">
+            <option *ngFor="let s of servicios" value="{{s.id_servicio}}">{{s.nombre_servicio}}</option>
+          </select>
+          <input type="time" formControlName="hora" id="hora">
+          <input type="date" formControlName="fecha" id="fecha">
 
-    <div class="continuar">
-      <div class="btn_continuar">
-        <span>Continuar</span>
-      </div>
-    </div>
+          <button class="btn_continuar"  (click)="goToParteDos()">
+            <span>Continuar</span>
+          </button>
+        </div>
+        <div *ngIf="parteDosModal">
+          <select formControlName="cliente" id="servicio">
+          <option *ngFor="let c of clientes" value="{{c.id}}">{{c.nombre}}</option>
+         </select>
+          <select formControlName="disponibilidad" id="servicio">
+            <option *ngFor="let d of disponibilidades" value="{{d.id_disponibilidad_estilista}}">{{d.hora_inicio}}{{d.hora_fin}}</option>
+          </select>
+          <button class="btn_continuar" (click)="goToParteTres()">
+            <span>Continuar</span>
+          </button>
+        </div>
+        <div *ngIf="parteTresModal">
+          <h1>parte 3</h1>
+          <button class="btn_continuar" type="submit" (click)="finalizarCrearCita()">
+            <span>Continuar</span>
+          </button>
+        </div>
+      </form>
+
+
+
     <footer class="footer">
       <p>La duración de los servicios y la estimación de sus precios son solamente aproximaciones, estos pueden variar dependiendo de diversas situaciones.</p>
     </footer>
