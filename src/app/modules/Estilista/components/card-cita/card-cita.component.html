@@ -1,9 +1,13 @@
-<div class="card-profile">
+<div class="container">
+  <div class="card-profile" *ngFor="let c of citasProcesadas">
+    <div class="sol">
+      <img src="/assets/img/sol.png" alt="">
+    </div>
     <div class="container-info">
       <div id="estado">
-        <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado, 'estado-hijo-por-confirmar':true}">
+        <div (click)="actualizarEstado(2, c.id_cita)">
                 <span>
-                    {{textoEstado}}
+                    {{c.descripcion_estado}}
                 </span>
         </div>
         <div class="editar" (click)="mostrarBurbuja()">
@@ -15,17 +19,27 @@
       <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
         <div [hidden]="ocultar_opciones">
           <div class="botonEditar">Editar</div>
-          <div class="botonEliminar" >Eliminar</div>
+          <div class="botonEliminar" (click)="actualizarEstado(4, c.id_cita)">Cancelar</div>
         </div>
       </div>
       <div class="info-head">
-        <h2>Cepillado de cabello</h2>
+        <h3>Cita de: <span>{{c.nombre_cliente}} {{c.apellido_cliente}}</span></h3>
       </div>
       <div class="card__datos">
-        <p><span>Estilista:</span>Maricela Gonzales</p>
-        <p><span>Fecha:</span> 26/05/2023</p>
-        <p><span>Cliente:</span>Arianna Sermeño</p>
+        <p><span>Fecha y hora:</span> {{c.fecha_hora_cita}}</p>
+        <p><span>Servicios:</span></p>
+        <div class="servicios">
+          <ul>
+            <li *ngFor="let s of c.servicios; let i = index">
+              {{s}}: ${{c.valor[i]}}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+
+
 
