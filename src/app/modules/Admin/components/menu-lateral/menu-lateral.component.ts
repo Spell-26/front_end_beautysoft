@@ -19,6 +19,10 @@ export class MenuLateralComponent {
   protected goClientes(){
     this.router.navigate(['admin/clientes']);
   }
+
+  protected goDashboar(){
+    this.router.navigate(['admin/dashboard']);
+  }
   protected goServicios(){
     this.router.navigate(['admin/servicios']);
   }

@@ -4,6 +4,8 @@ import { AdministradorComponent } from './administrador.component';
 import {AdministradorRoutingModule} from "./administrador-routing.module";
 import {MenuLateralComponent, ProximasCitasComponent} from "./components";
 import { LoginComponent } from './login/login.component';
+import { Grafica1Component } from './components/grafica1/grafica1.component';
+
 
 
 
@@ -17,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
     AdministradorRoutingModule,
     MenuLateralComponent,
-    ProximasCitasComponent
+    ProximasCitasComponent,
+    Grafica1Component
 
   ]
 })
