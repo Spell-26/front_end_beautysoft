@@ -1,0 +1,38 @@
+<div class="modal">
+  <div class="modal_body">
+    <header class="header_modal">
+      <div class="cerrar">
+        <span (click)="closeModal()">x</span>
+      </div>
+      <div class="titulo_modal">
+        <h2>Crear una nueva cita</h2>
+      </div>
+      <div class="info">
+        <p>En esta ventana podrás crear una nueva cita. Para hacerlo sigue los siguientes pasos:</p>
+        <ol>
+          <li>Selecciona el servicio que deseas, luego la fecha y la hora.</li>
+          <li>A continuación aparecerá un listado con los estilistas disponibles.</li>
+          <li>Una vez creada tu cita te enviaremos un emai. En el cual podrás confirmar tu cita, en caso de no hacerlo,
+          se cancelará tu reserva 24 horas despúes de la creación.</li>
+        </ol>
+      </div>
+    </header>
+    <div class="form">
+      <form >
+        <select name="servicio" id="">
+          <option>servicio prueba</option>
+        </select>
+        <input type="datetime" name="fecha" id="" placeholder="Fecha y hora">
+      </form>
+    </div>
+
+    <div class="continuar">
+      <div class="btn_continuar">
+        <span>Continuar</span>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>La duración de los servicios y la estimación de sus precios son solamente aproximaciones, estos pueden variar dependiendo de diversas situaciones.</p>
+    </footer>
+  </div>
+</div>
