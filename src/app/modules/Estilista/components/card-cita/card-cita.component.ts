@@ -12,7 +12,8 @@ interface interfaceCita {
   descripcion_estado: string;
   duracion: string;
   fecha_disponibilidad: string;
-  fecha_hora_cita: string;
+  fecha_cita: string;
+  hora_cita: string
   fin_disponiblidad: string;
   foto_cliente: string;
   foto_estilista:string;
@@ -119,7 +120,7 @@ export class CardCitaComponent {
       this.citas.forEach((cita:{
         apellido_cliente: string, apellido_estilista: string, correo_cliente: string,
         correo_estilista: string, descripcion_estado: string, duracion: string,
-        fecha_disponibilidad: string, fecha_hora_cita: string, fin_disponiblidad: string,
+        fecha_disponibilidad: string, fecha_cita: string, hora_cita:string, fin_disponiblidad: string,
         foto_cliente: string, foto_estilista:string, id_cita:number,
         id_cliente:number, id_estados:number, id_estilista:number, inicio_disponibilidad:string,
         nombre_cliente:string, nombre_estilista:string, nombre_servicio:string, valor:number
@@ -133,7 +134,7 @@ export class CardCitaComponent {
           this.citasProcesadas.push({
             apellido_cliente: cita.apellido_cliente, apellido_estilista: cita.apellido_estilista, correo_cliente: cita.correo_cliente,
             correo_estilista: cita.correo_estilista, descripcion_estado: cita.descripcion_estado, duracion: cita.duracion,
-            fecha_disponibilidad: cita.fecha_disponibilidad, fecha_hora_cita: cita.fecha_hora_cita, fin_disponiblidad: cita.fin_disponiblidad,
+            fecha_disponibilidad: cita.fecha_disponibilidad, fecha_cita: cita.fecha_cita, hora_cita: cita.hora_cita, fin_disponiblidad: cita.fin_disponiblidad,
             foto_cliente: cita.foto_cliente, foto_estilista: cita.foto_estilista, id_cita: cita.id_cita,
             id_cliente: cita.id_cliente, id_estados: cita.id_estados, id_estilista: cita.id_estilista, inicio_disponibilidad: cita.inicio_disponibilidad,
             nombre_cliente: cita.nombre_cliente, nombre_estilista: cita.nombre_estilista, servicios: [cita.nombre_servicio], valor: [cita.valor]

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ModalNuevaCitaService} from "../../../../service/estilistaServices/citas/modal-nueva-cita.service";
 
 @Component({
   selector: 'app-container-central-estilista',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class ContainerCentralEstilistaComponent {
 
+  modalState:boolean = false;
+
+  constructor( private modalService: ModalNuevaCitaService) {
+  }
+
+  ngOnInit(){
+    this.modalService.$modalNuevaCita.subscribe((value) => {
+      this.modalState = value
+    });
+  }
+  abrirModal(){
+    this.modalState = true
+  }
 }

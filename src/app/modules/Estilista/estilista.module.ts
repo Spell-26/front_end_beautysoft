@@ -9,6 +9,9 @@ import { ContainerCentralEstilistaComponent } from './components/container-centr
 import { MapaDisponibilidadesComponent } from './components/mapa-disponibilidades/mapa-disponibilidades.component';
 import { ProximasCitasComponent } from './components/proximas-citas/proximas-citas.component';
 import { CardCitaComponent } from './components/card-cita/card-cita.component';
+import { ModalNuevaCitaComponent } from './components/modal-nueva-cita/modal-nueva-cita.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 
 
@@ -21,11 +24,16 @@ import { CardCitaComponent } from './components/card-cita/card-cita.component';
     ContainerCentralEstilistaComponent,
     MapaDisponibilidadesComponent,
     ProximasCitasComponent,
-    CardCitaComponent
+    CardCitaComponent,
+    ModalNuevaCitaComponent,
+
   ],
-  imports: [
-    CommonModule,
-    EstilistaRoutingModule,
-  ]
+    imports: [
+        CommonModule,
+        EstilistaRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+
+    ]
 })
 export class EstilistaModule { }
