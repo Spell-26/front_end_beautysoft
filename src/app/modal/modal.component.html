@@ -20,12 +20,12 @@
         <span class="span" *ngIf="formGroup.get('apellido')?.invalid && formGroup.get('apellido')?.touched">
           El apellido es requerido
         </span>
-        <input type="email" placeholder="Email" formControlName="email">
-        <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+        <input type="email" placeholder="Email" formControlName="correo_usuario">
+        <span class="span" *ngIf="formGroup.get('correo_usuario')?.invalid && formGroup.get('correo_usuario')?.touched">
           El email es requerido y debe ser válido
         </span>
-        <input type="password" placeholder="Contraseña" formControlName="contraseña">
-        <span class="span" *ngIf="formGroup.get('contraseña')?.invalid && formGroup.get('contraseña')?.touched">
+        <input type="password" placeholder="Contraseña" formControlName="contrasena">
+        <span class="span" *ngIf="formGroup.get('contrasena')?.invalid && formGroup.get('contrasena')?.touched">
           La contraseña es requerida
         </span>
         <input type="password" placeholder="Confirmar contraseña" formControlName="confirmar">

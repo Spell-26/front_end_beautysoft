@@ -16,8 +16,8 @@ export class ModalComponent {
   formGroup: FormGroup = this.formBuilder.group({
     nombre: ['', Validators.required],
     apellido: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    contraseña: ['', Validators.required],
+    correo_usuario: ['', [Validators.required, Validators.email]],
+    contrasena: ['', Validators.required],
     confirmar: ['', Validators.required]
   });
 
