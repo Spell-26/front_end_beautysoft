@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {CitasService} from "../../../../service/estilistaServices/citas/citas.service";
 import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
+import {ModalEditarCitaService} from "../../../../service/estilistaServices/citas/modal-editar-cita.service";
 
 
 interface interfaceCita {
@@ -38,21 +39,26 @@ export class CardCitaComponent {
   //PETICION A SERVICIO CITAS
   protected citas:any[] = [];
   protected citasProcesadas: interfaceCita[] = [];
+  protected desplegados :boolean[] = [];
+  modalState:boolean = false;
 
-  constructor(private citasService : CitasService) {
+  constructor(private citasService : CitasService, private modalEditarService : ModalEditarCitaService) {
 
   }
 
   ngOnInit():void{
+    this.modalEditarService.$modalEditarCita.subscribe((value) => {
+      this.modalState = value;
+    });
 
     this.citasService.refreshNeeded.subscribe(() => {
       this.citasProcesadas = [];
       this.citas = [];
+      this.desplegados = [];
       this.obtenerCitas();
     });
 
     this.obtenerCitas();
-
   }
   //actualizar el estado de la cita
   actualizarEstado(idEstado:number, idCita:number) :void{
@@ -91,28 +97,10 @@ export class CardCitaComponent {
   protected editar_collapsed:boolean = true;
   protected ocultar_opciones:boolean = true;
 
+mostrarBurbuja(index : number):void{
+  this.desplegados[index] = !this.desplegados[index];
+}
 
-  mostrarBurbuja():void {
-    this.editar_collapsed = !this.editar_collapsed;
-    this.mostrarOpciones();
-  }
-  mostrarOpciones():void{
-    if (!this.editar_collapsed){
-      try{
-        setTimeout(() =>{
-            this.ocultar_opciones = !this.ocultar_opciones;
-          }, 800
-        );
-      }
-      catch (e) {
-        console.log(e);
-      }
-    }
-    else{
-      this.ocultar_opciones = !this.ocultar_opciones;
-    }
-
-  }
 
   private obtenerCitas(){
     this.citasService.getAllCitas().subscribe((cita : {count:Number, citas:any[]}) =>{
@@ -141,8 +129,14 @@ export class CardCitaComponent {
           });
         }
       });
-      console.log(this.citasProcesadas);
+      this.desplegados =new Array(this.citasProcesadas.length).fill(false);
+
     });
   }
 
+  protected abrirModal(index : number){
+    this.citasService.$cita = this.citasProcesadas;
+    this.citasService.$index = index;
+    this.modalState = true;
+  }
 }

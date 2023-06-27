@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card-profile" *ngFor="let c of citasProcesadas">
+  <div class="card-profile" *ngFor="let c of citasProcesadas; let i = index">
     <div class="sol">
       <img src="/assets/img/sol.png" alt="">
     </div>
@@ -10,15 +10,15 @@
                     {{c.descripcion_estado}}
                 </span>
         </div>
-        <div class="editar" (click)="mostrarBurbuja()">
+        <div class="editar" (click)="mostrarBurbuja(i)">
         <span class="material-symbols-outlined">
           more_vert
         </span>
         </div>
       </div>
-      <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
-        <div [hidden]="ocultar_opciones">
-          <div class="botonEditar">Editar</div>
+      <div [ngClass]="{'settings-content-collapsed': desplegados[i] == false, 'settings-content': desplegados[i] == true}">
+        <div [hidden]="!desplegados[i]">
+          <div class="botonEditar" (click)="abrirModal(i)">Editar</div>
           <div class="botonEliminar" (click)="actualizarEstado(4, c.id_cita)">Cancelar</div>
         </div>
       </div>
@@ -39,6 +39,8 @@
     </div>
   </div>
 </div>
+
+<app-modal-editar-cita *ngIf="modalState == true"></app-modal-editar-cita>
 
 
 

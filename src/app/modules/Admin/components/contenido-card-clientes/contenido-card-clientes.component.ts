@@ -20,7 +20,7 @@ export class ContenidoCardClientesComponent implements OnInit{
   ngOnInit(): void {
     //Funcion del servicio que importamos en el constructor
     //nos trae todos los registros de clientes
-    //cliente: {count:Number,  clientes:anu[]} es para hacer una desnormalizacion del json que nos manda el backend
+    //cliente: {count:Number,  clientes:anu[]} es para hacer una usuarios  desnormalizacion del json que nos manda el backend
     //Y hacer mas sencillo el recorrido
     //.subscribe es parte de la pedicion no le presten atencion pero se debe incluir
     this.clienteService.GetAllClientes().subscribe((cliente: {count:Number, clientes:any[]}) => {

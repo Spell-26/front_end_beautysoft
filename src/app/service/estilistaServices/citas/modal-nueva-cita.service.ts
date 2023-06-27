@@ -1,13 +1,14 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {CitasService} from "./citas.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModalNuevaCitaService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private citasService : CitasService) { }
 
   $modalNuevaCita = new EventEmitter<any>();
 
@@ -35,6 +36,10 @@ export class ModalNuevaCitaService {
   //nuevo servicio por cita
   nuevoServicioCita(datos:any) : Observable<any>{
     const url = 'api/estilista/servicio-cita/nuevo-servicio-por-cita';
-    return this.http.post(url, datos);
+    return this.http.post(url, datos).pipe(
+      tap( () => {
+        this.citasService.refreshNeeded.next();
+      })
+    );
   }
 }

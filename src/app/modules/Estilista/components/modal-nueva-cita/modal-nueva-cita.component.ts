@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ModalNuevaCitaService} from "../../../../service/estilistaServices/citas/modal-nueva-cita.service";
 import {FormControl, FormGroup} from "@angular/forms";
 
+
 @Component({
   selector: 'app-modal-nueva-cita',
   templateUrl: './modal-nueva-cita.component.html',
@@ -95,6 +96,7 @@ export class ModalNuevaCitaComponent {
   nuevoServicioCita(){
     console.log("parametro id_cta", this.idCitaCreada);
     const datos = {
+      //SE DEBE CAMBIAR LUEGO ESTA QUEMADO PORQUE AUN NO ESTA EL SERVICE DE SERVICIO POR ESTILISTA
       serv_estilista : 1,
       id_cita: this.idCitaCreada
     }

@@ -11,6 +11,7 @@ import { ProximasCitasComponent } from './components/proximas-citas/proximas-cit
 import { CardCitaComponent } from './components/card-cita/card-cita.component';
 import { ModalNuevaCitaComponent } from './components/modal-nueva-cita/modal-nueva-cita.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ModalEditarCitaComponent } from './components/modal-editar-cita/modal-editar-cita.component';
 
 
 
@@ -26,6 +27,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ProximasCitasComponent,
     CardCitaComponent,
     ModalNuevaCitaComponent,
+    ModalEditarCitaComponent,
 
   ],
     imports: [
