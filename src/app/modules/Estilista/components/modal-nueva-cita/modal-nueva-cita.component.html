@@ -41,9 +41,13 @@
           </button>
         </div>
         <div *ngIf="parteTresModal">
-          <h1>parte 3</h1>
+          <div class="hecho">
+            <h3>Listo!</h3>
+            <p>Recuerda confirmar tu cita a través del email enviado a tu correo eléctronico registrado en BeautySoft<p>
+            <img src="/assets/img/check.png" alt="">
+          </div>
           <button class="btn_continuar" type="submit" (click)="finalizarCrearCita()">
-            <span>Continuar</span>
+            <span>Completado!</span>
           </button>
         </div>
       </form>

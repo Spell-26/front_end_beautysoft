@@ -1,0 +1,26 @@
+<div class="modal">
+  <div class="modal_body">
+    <header class="header-modal">
+
+      <div class="cerrar">
+        <span (click)="closeModal()">X</span>
+      </div>
+      <div class="titulo-modal">
+        <h2>Actualizar cita</h2>
+      </div>
+      <div class="info">
+        <p>En esta ventana podrás actualizar los datos de una cita.</p>
+      </div>
+    </header>
+    <form class="form_body" [formGroup]="formulario">
+      <label>Fecha</label>
+      <input type="date" formControlName="fecha" id="fecha" >
+      <label >Hora</label>
+      <input type="time" formControlName="hora" id="hora" >
+
+      <button class="btn_continuar" type="submit" (click)="actualizar()">
+        <span>Guardar</span>
+      </button>
+    </form>
+  </div>
+</div>

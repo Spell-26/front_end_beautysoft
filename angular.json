@@ -67,7 +67,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "front_end_beautysoft:build:production"
+              "browserTarget": "front_end_beautysoft:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
               "browserTarget": "front_end_beautysoft:build:development",

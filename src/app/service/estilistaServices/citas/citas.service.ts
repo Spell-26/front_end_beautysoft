@@ -11,6 +11,9 @@ export class CitasService {
 
   private _refreshNeeded = new Subject<void>()
 
+  $cita: any[] = []
+  $index : number = 0;
+
   get refreshNeeded(){
     return this._refreshNeeded;
   }
@@ -25,5 +28,13 @@ export class CitasService {
         this._refreshNeeded.next();
       })
     )
+  }
+  actualizarCita(datos:any):Observable<any>{
+    const url = 'api/estilista/citas/actualizar-cita';
+    return this.http.post(url, datos).pipe(
+      tap( () => {
+        this._refreshNeeded.next();
+      })
+    );
   }
 }
