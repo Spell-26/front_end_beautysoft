@@ -2,50 +2,50 @@
 
 <ng-template #template2>
   <div class="x">
-    <button mat-button mat-dialog-close >x </button>
+    <button mat-button mat-dialog-close>x</button>
   </div>
   <h1 mat-dialog-title class="header-modal">Registrar un nuevo usuario<hr></h1>
- <div class="info">
-  <p>En esta ventana podrás crear un nuevo usuarioo</p>
- </div>
+  <div class="info">
+    <p>En esta ventana podrás crear un nuevo usuario</p>
+  </div>
 
   <div mat-dialog-content class="custom-dialog-content">
-    <form [formGroup]="formGroup">
+    <form (ngSubmit)="onSave()" [formGroup]="formGroup">
       <div class="select">
-        <input type="text" placeholder="Nombre:" formControlName="nombre" name="" id="">
+        <input type="text" placeholder="Nombre:" formControlName="nombre">
         <span class="span" *ngIf="formGroup.get('nombre')?.invalid && formGroup.get('nombre')?.touched">
           El nombre es requerido
         </span>
-        <input type="text" placeholder="Apellido:" formControlName="apellido" name="" id="">
+        <input type="text" placeholder="Apellido:" formControlName="apellido">
         <span class="span" *ngIf="formGroup.get('apellido')?.invalid && formGroup.get('apellido')?.touched">
-          El apelldio es requerido
+          El apellido es requerido
         </span>
-        <input type="email" placeholder="Email"  formControlName="email" name="" id="">
+        <input type="email" placeholder="Email" formControlName="email">
         <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
           El email es requerido y debe ser válido
         </span>
-
-        <input type="password" placeholder="Contraseña" formControlName="contraseña" name="" id="">
+        <input type="password" placeholder="Contraseña" formControlName="contraseña">
         <span class="span" *ngIf="formGroup.get('contraseña')?.invalid && formGroup.get('contraseña')?.touched">
-          La contraseña es requeriadad
+          La contraseña es requerida
         </span>
-        <input type="password" placeholder="Confirmar contraseña" formControlName="confirmar" name="" id="">
+        <input type="password" placeholder="Confirmar contraseña" formControlName="confirmar">
         <span class="span" *ngIf="formGroup.get('confirmar')?.invalid && formGroup.get('confirmar')?.touched">
-          La confrimación es requeridad
+          La confirmación es requerida
         </span>
       </div>
-    <div>
-      <div class="estado">
-          <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
-            {{textoEstado}}
-          </span></p>
+      <div>
+        <div class="estado">
+          <p class="boton__estado">Estado: <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
+              {{textoEstado}}
+            </span></p>
         </div>
       </div>
       <div class="Botones" mat-dialog-actions>
-        <button class="crear" mat-button (click)="onSave()">Guardar</button>
+        <button class="crear" mat-button type="submit">Guardar</button>
       </div>
       <div class="texto-politicas">
-        <p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>
+        <p>Al diligenciar este formulario, usted acepta nuestras políticas de tratamiento de datos personales y otorga su consentimiento para que estos sean almacenados, recopilados y procesados.</p>
       </div>
     </form>
   </div>
+</ng-template>

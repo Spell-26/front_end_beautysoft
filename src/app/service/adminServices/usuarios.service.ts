@@ -20,14 +20,6 @@ export class UsuariosService {
     return this.http.get('/api/usuarios');
   }
 
-  actualizarEstadoCita(datos:any){
-    const url = 'api/admin/usuarios/actualizar_estado';
-    return this.http.put(url, datos).pipe(
-      tap(() =>{
-        this._refreshNeeded.next();
-      })
-    )
-  }
 
 
 
