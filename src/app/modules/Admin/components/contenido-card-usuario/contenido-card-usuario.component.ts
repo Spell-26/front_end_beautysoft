@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { DialogService } from 'src/app/service/dialog.service';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { UsuariosService } from 'src/app/service/adminServices/usuarios.service';
+import { ModalEditarUsuarioService } from 'src/app/service/adminServices/modal-editar-usuario.service';
 
 
 @Component({
@@ -13,7 +14,6 @@ import { UsuariosService } from 'src/app/service/adminServices/usuarios.service'
 })
 export class ContenidoCardUsuarioComponent {
 
-  //editar boton
 
   private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
@@ -22,7 +22,7 @@ export class ContenidoCardUsuarioComponent {
     email: ['', [Validators.required, Validators.email]],
   });
 
-  constructor(private dialogService: DialogService, private formBuilder: FormBuilder, private UsuarioServicio: UsuariosService) {}
+  constructor(private dialogService: DialogService, private formBuilder: FormBuilder, private UsuarioServicio: UsuariosService,modalEditarUsuarioService: ModalEditarUsuarioService) {}
 
 
   openDialogCustom(){
@@ -55,11 +55,6 @@ export class ContenidoCardUsuarioComponent {
       //utilizar libreria snackbar para mostrar un error en un tiempo definido
     }
   }
-
-
-
-
-
 
   protected estado:boolean = true;
   protected textoEstado:string ="Activo";
