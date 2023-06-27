@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogService } from '../service/dialog.service';
 import { DialogWithTemplateComponent } from '../components/dialog-with-template/dialog-with-template.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modal',
@@ -49,6 +50,11 @@ export class ModalComponent {
     } else {
       // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
       //utilizar libreria snackbar para mostrar un error en un tiempo definido
+      Swal.fire({
+        icon:'error',
+        title:'Error',
+        text: 'Hay campos vacios'
+      })
     }
   }
 

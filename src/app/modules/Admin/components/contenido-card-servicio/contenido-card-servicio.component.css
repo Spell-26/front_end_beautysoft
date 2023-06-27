@@ -104,7 +104,6 @@ hr{
 }
 /* texto de informacion */
 .info{
-  background-color: #6BCEE3;
   border-radius: 15px;
   text-align: center;
   width: 80%;
@@ -168,8 +167,8 @@ hr{
 
 /* ajustes del boton de activo e inactivo */
 .boton__estado{
-  font-weight: bold; 
-  margin-left:45px; 
+  font-weight: bold;
+  margin-left:45px;
   margin-top: 40px
 }
 

@@ -42,12 +42,12 @@
   <div mat-dialog-content class="custom-dialog-content">
       <p style="font-weight: bold;">Al eliminar este servicio su informacion será eliminda permanentemente ¿Deseas Continuar?</p>
   </div>
-  
+
   <div class="Botones-eliminar" mat-dialog-actions>
       <button class="eliminar__crear" mat-button (click)="onSave()">Continuar</button>
       <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
   </div>
-  
+
   </ng-template>
 
 
@@ -65,7 +65,7 @@
   <div class="info">
    <p>En esta ventana podrás actualizar un servicio</p>
   </div>
- 
+
    <div mat-dialog-content class="custom-dialog-content">
      <form [formGroup]="formGroup">
        <div class="select">
@@ -77,7 +77,7 @@
          <span class="span" *ngIf="formGroup.get('duracion')?.invalid && formGroup.get('duracion')?.touched">
            La duración es requeridad
          </span>
- 
+
          <input type="number" placeholder="Valor" formControlName="valor" name="" id="">
          <span class="span" *ngIf="formGroup.get('valor')?.invalid && formGroup.get('valor')?.touched">
            El valor es requerido

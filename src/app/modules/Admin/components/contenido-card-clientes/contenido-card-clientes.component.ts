@@ -18,17 +18,29 @@ export class ContenidoCardClientesComponent implements OnInit{
   constructor(private dialogService:DialogService, private formBuilder: FormBuilder, private clienteService: ClienteService  ){}
   //Funcion de Angular, ejecuta la funcion antes de cargar el componente
   ngOnInit(): void {
-    this.listar()
+    this.listarCliente()
   }
 
 
 
-  listar(){
+  listarCliente(){
     this.clienteService.GetAllClientes().subscribe((clientes:{message:any[]})=>{
       this.clientes=clientes.message
       console.log(this.clientes);
     }
     )}
+
+    eliminarCliente(id:string){
+      this.clienteService.deleteCliente(id).subscribe(res=>{
+        console.log('cliente eliminado')
+        this.listarCliente();
+      },
+      error=>{
+        console.log(error);
+      })
+
+
+    }
 
 
   //editar boton

@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  width: 1366px;
+}
+.cuerpo{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+app-menu-lateral{
+  width: 18%;
+}
+.cabecera{
+  width: 100%;
+}
+.body{
+  width: 100%;
+  display: flex;
+}

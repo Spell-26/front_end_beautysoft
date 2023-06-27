@@ -41,9 +41,9 @@ export class ClienteService {
 }
 
 export interface clientes{
-  id_cliente: string;
-  nombre: string;
-  apellido: string;
+  id_cliente:string;
+  nombre:string;
+  apellido:string;
   nombre_rol:string;
   correo_cliente: string;
   telefono: string;

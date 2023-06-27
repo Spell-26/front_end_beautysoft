@@ -9,40 +9,40 @@
    <div mat-dialog-content class="custom-dialog-content">
      <form [formGroup]="formGroup">
        <div class="select">
-         <input type="text" placeholder="Nombre:" formControlName="nombre" name="" id="">
+         <!-- <input type="text" placeholder="Nombre:" formControlName="nombre" name="" id="">
          <span class="span" *ngIf="formGroup.get('nombre')?.invalid && formGroup.get('nombre')?.touched">
            El nombre es requerido.
          </span>
          <input type="text" placeholder="Apellido:" formControlName="apellido" name="" id="">
          <span class="span" *ngIf="formGroup.get('apellido')?.invalid && formGroup.get('apellido')?.touched">
            El apelldio es requerido.
-         </span>
-         <input type="text" placeholder="Télefono:" formControlName="telefono" name="" id="">
+         </span> -->
+         <input type="text" placeholder="Télefono:"  formControlName="telefono" name="" id="">
          <span class="span" *ngIf="formGroup.get('telefono')?.hasError('required') && formGroup.get('telefono')?.touched">
            El télefono es requerido y debe ser valido.
          </span>
          <span class="span" *ngIf="formGroup.get('telefono')?.hasError('pattern')">
-          Solo debe ser número 
+          Solo debe ser diez números
         </span>
 
-         <input type="text" placeholder="Dirección:" formControlName="direccion" name="" id="">
+         <input type="text"  placeholder="Dirección:" formControlName="direccion" name="direccion" id="">
          <span class="span" *ngIf="formGroup.get('direccion')?.invalid && formGroup.get('direccion')?.touched">
            La dirección es requeridad
          </span>
 
-         <input type="email" placeholder="Email:"  formControlName="email" name="" id="">
+         <input type="email"  placeholder="Email:"  formControlName="email" name="" id="">
          <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
            El email es requerido y debe ser válido.
          </span>
- 
-         <input type="password" placeholder="Contraseña:" formControlName="contraseña" name="" id="">
+
+         <!-- <input type="password" placeholder="Contraseña:" formControlName="contraseña" name="" id="">
          <span class="span" *ngIf="formGroup.get('contraseña')?.invalid && formGroup.get('contraseña')?.touched">
            La contraseña es requeriadad.
          </span>
          <input type="password" placeholder="Confirmar contraseña:" formControlName="confirmar" name="" id="">
          <span class="span" *ngIf="formGroup.get('confirmar')?.invalid && formGroup.get('confirmar')?.touched">
            La confrimación es requeridad.
-         </span>
+         </span> -->
        </div>
      <div>
        <div class="estado">

@@ -1,7 +1,7 @@
 .nuevo-usuario-btn{
     position: absolute;
-    left: 720px;
-    top: 25px;
+    left: 1150px;
+    top: 85px;
     width: 180px;
     background-color: #F9AD1A;
     border-radius: 6px;
@@ -10,9 +10,9 @@
     padding: 0.85em;
     color: white;
     border: none;
-  
+
   }
-  
+
   .header-modal{
     font-weight: bold;
     text-align: center;
@@ -21,7 +21,7 @@
     width: 80%;
     margin: auto;
   }
-  
+
   .info{
     background-color: #6BCEE3;
     border-radius: 15px;
@@ -42,29 +42,29 @@
     border: none;
     box-shadow: 2px 2px 5px #5b5a5a;
     cursor: pointer;
-  
+
   }
   .crear:hover{
     background: #56245f;
-  
+
   }
-  
+
   .cancelar:hover{
     background: #7a0101 ;
-  
-  }
-  
-  
 
-  
-  
+  }
+
+
+
+
+
   /* ajustes del boton de activo e inactivo */
   .boton__estado{
-    font-weight: bold; 
-    margin-left:45px; 
+    font-weight: bold;
+    margin-left:45px;
     margin-top: 40px
   }
- 
+
   .estado-hijo{
     width: 40%;
     height: 1.5em;
@@ -72,11 +72,11 @@
     padding: 3px;
     border: 2px solid green;
     color: green;
- 
+
     text-align: center;
     cursor: pointer;
   }
-  
+
 
   .estado-hijo-click{
     width: 35%;
@@ -88,7 +88,7 @@
     text-align: center;
     cursor: pointer;
   }
-  
+
 
   /*Para modificar el select*/
   .select{
@@ -97,8 +97,8 @@
     justify-content: center;
     margin-top: 5px;
   }
-  
-  
+
+
   /*Estilos para los input de fecha y hora sin cambiar*/
   input[type="text"]{
     margin-left: auto;
@@ -109,8 +109,8 @@
     background: none;
     border: none;
     border-bottom: 2px solid  rgba(164, 119, 90, 1);
-  
-  
+
+
   }
   /**Estilos para los input de fecha y hora cuando cambiam*/
   input[type="number"],
@@ -124,12 +124,12 @@
     border: none;
     border-bottom: 2px solid  rgba(164, 119, 90, 1);
   }
-  
+
   .custom-dialog-content {
     width: 500px; /* Ajusta el ancho según tus necesidades */
    /* Ajusta la altura según tus necesidades */
   }
-  
+
   .span{
     margin-left: 50px;
     color: red;
@@ -137,5 +137,4 @@
     font-size: small;
   }
 
-  
-  
+

@@ -1,7 +1,7 @@
 .nuevo-usuario-btn{
   position: absolute;
-  left: 620px;
-  top: 25px;
+  left: 950px;
+  top: 85px;
   width: 180px;
   background-color: #F9AD1A;
   border-radius: 6px;
@@ -60,8 +60,8 @@ hr{
 
 /* ajustes del boton de activo e inactivo */
 .boton__estado{
-  font-weight: bold; 
-  margin-left:45px; 
+  font-weight: bold;
+  margin-left:45px;
   margin-top: 40px
 }
 

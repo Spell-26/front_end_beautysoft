@@ -208,10 +208,11 @@ hr{
 
 
 
-.boton__estado{
+.estado2{
   font-weight: bold;
-  margin-left:45px;
-  margin-top: 40px
+  margin-left: 45px;
+  margin-top: 40px;
+
 }
 
 .estado-hijo{
@@ -295,20 +296,7 @@ input[type="email"]{
   font-size: small;
 }
 
-.texto-politicas{
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: justify;
-}
 
-.paginacion{
-  width: 100%;
-  text-align: center;
-}
-.paginacion div span{
-  margin: .5em;
-}
 
 .texto-politicas{
   width: 80%;

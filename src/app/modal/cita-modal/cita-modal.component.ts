@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cita-modal',
@@ -47,7 +48,11 @@ export class CitaModalComponent {
     } else {
       // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
       //utilizar libreria snackbar para mostrar un error en un tiempo definido
-
+      Swal.fire({
+        icon:'error',
+        title:'Error',
+        text: 'Hay campos vacios'
+      })
     }
   }
 

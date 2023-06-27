@@ -45,8 +45,6 @@
 
 
 
-
-
 <!-- contenido de la advertencia del boton cancelar -->
 
 <ng-template #template3>
@@ -57,10 +55,12 @@
 <div mat-dialog-content class="custom-dialog-content">
     <p style="font-weight: bold;">Al eliminar este cliente su informacion será eliminda permanentemente ¿Deseas Continuar?</p>
 </div>
+<div *ngFor="let c of clientes ">
+  <div class="Botones-eliminar" mat-dialog-actions >
+      <button class="eliminar__crear" mat-button (click)="eliminarCliente(c.id_cliente)">Continuar</button>
+      <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
+  </div>
 
-<div class="Botones-eliminar" mat-dialog-actions>
-    <button class="eliminar__crear" mat-button (click)="onSave()">Continuar</button>
-    <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
 </div>
 
 </ng-template>
@@ -87,7 +87,7 @@
          </span>
        </div>
      <div>
-       <div class="estado">
+       <div class="estado2">
            <p class="boton__estado">Estado:  <span (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
              {{textoEstado}}
            </span></p>

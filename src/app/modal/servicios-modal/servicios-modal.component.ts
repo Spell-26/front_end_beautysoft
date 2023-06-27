@@ -49,8 +49,9 @@ export class ServiciosModalComponent {
       // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
       //utilizar libreria snackbar para mostrar un error en un tiempo definido
       Swal.fire({
-        title:'error',
-        text: 'Las validaciones se encuentran mal'
+        icon:'error',
+        title:'Error',
+        text: 'Hay campos vacios'
       })
     }
   }

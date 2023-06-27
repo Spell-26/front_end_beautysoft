@@ -1,6 +1,8 @@
+import { ClienteService, clientes } from './../../service/cliente/cliente.service';
 import { Component, TemplateRef } from '@angular/core';
 import { FormGroup,FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
 import Swal from 'sweetalert2';
@@ -12,19 +14,30 @@ import Swal from 'sweetalert2';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent {
+
+
+
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
   formGroup: FormGroup = this.formBuilder.group({
-    nombre: ['', Validators.required],
-    apellido: ['', Validators.required],
+    // nombre: ['', Validators.required],
+    // apellido: ['', Validators.required],
     telefono:new FormControl('',[Validators.required,Validators.pattern('^[0-9]{10}$')]),
     direccion:['',Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    contraseña: ['', Validators.required],
-    confirmar: ['', Validators.required]
+    // contraseña: ['', Validators.required],
+    // confirmar: ['', Validators.required]
   });
 
-  constructor(private dialogService: DialogService, private formBuilder: FormBuilder) {}
+
+
+
+constructor(private dialogService: DialogService, private formBuilder: FormBuilder, private ClienteService: ClienteService, private router:Router) {}
+
+  agregar(){
+    this.ClienteService.addCliente(this.formGroup).subscribe()
+
+  }
 
   openDialogCustom() {
     this.dialogService.openDialogCustom({
@@ -46,17 +59,19 @@ export class ClientesComponent {
 
 
   onSave() {
-    if (this.formGroup.invalid) {
-      Swal.fire({
-        title:'error',
-        text: 'Las validaciones se encuentran mal'
-      })
-      return
-    } 
-    console.log(this.formGroup.value);
-    this.formGroup.reset();
-    this.matDialogRef.close();
+    if (this.formGroup.valid) {
+      console.log(this.formGroup.value);
+      this.formGroup.reset();
+      this.matDialogRef.close();
+      this.agregar();
+    }else{
 
+      Swal.fire({
+        icon:'error',
+        title:'Error',
+        text: 'Hay campos vacios'
+      })
+    }
   }
 
   estado = true;
