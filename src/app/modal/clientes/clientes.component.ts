@@ -1,3 +1,4 @@
+
 import { ClienteService, clientes } from './../../service/cliente/cliente.service';
 import { Component, TemplateRef } from '@angular/core';
 import { FormGroup,FormControl, FormBuilder, Validators } from '@angular/forms';
@@ -14,30 +15,19 @@ import Swal from 'sweetalert2';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent {
-
-
-
   matDialogRef!: MatDialogRef<DialogWithTemplateComponent>;
 
-  formGroup: FormGroup = this.formBuilder.group({
-    // nombre: ['', Validators.required],
-    // apellido: ['', Validators.required],
+formGroup: FormGroup = this.formBuilder.group({
+  nombre: new FormControl('',[ Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
+  apellido: new FormControl('',[ Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
     telefono:new FormControl('',[Validators.required,Validators.pattern('^[0-9]{10}$')]),
     direccion:['',Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    // contraseña: ['', Validators.required],
-    // confirmar: ['', Validators.required]
+    correo: ['', [Validators.required, Validators.email]],
+    contraseña: ['', Validators.required],
+    confirmar: ['', Validators.required]
   });
 
-
-
-
 constructor(private dialogService: DialogService, private formBuilder: FormBuilder, private ClienteService: ClienteService, private router:Router) {}
-
-  agregar(){
-    this.ClienteService.addCliente(this.formGroup).subscribe()
-
-  }
 
   openDialogCustom() {
     this.dialogService.openDialogCustom({
@@ -56,23 +46,85 @@ constructor(private dialogService: DialogService, private formBuilder: FormBuild
       this.formGroup.reset();
     });
   }
+  //Funcion de validación personalizada para comparar contraseñas
 
 
+  // validarContraseña(){
+  //   const contraseña= this.formGroup.get('contraseña')?.value;
+  //   const confirmar =this.formGroup.get('confirmar')?.value;
+  //   if(contraseña!==confirmar){
+  //     this.formGroup.get('confirmar')?.setErrors({error:true})
+  //   }else{
+  //     this.formGroup.get('confirmar')?.setErrors(null);
+  //   }
+  // }
+
+//Validaciones del formulario con sweetalert2
   onSave() {
-    if (this.formGroup.valid) {
-      console.log(this.formGroup.value);
-      this.formGroup.reset();
-      this.matDialogRef.close();
-      this.agregar();
-    }else{
+    if (this.formGroup.controls['nombre'].invalid) {
+        Swal.fire({
+        icon: 'error',
+        title:'Error en validaciones',
+        text: 'El nombre es requerido y solo se permiten letras',
+
+    })
+    }else if(this.formGroup.controls['apellido'].invalid){
+      Swal.fire({
+        icon: 'error',
+        title:'Error en validaciones',
+        text: 'El apellido es requerido y solo se permiten letras'
+      })
+    }else if(this.formGroup.controls['telefono'].invalid){
 
       Swal.fire({
-        icon:'error',
-        title:'Error',
-        text: 'Hay campos vacios'
+        icon: 'error',
+        title:'Error en validaciones',
+        text: 'El télefono es requerido y solo debe ser diez números. '
       })
+
+    }else if(this.formGroup.controls['direccion'].invalid){
+      Swal.fire({
+        icon: 'error',
+        title:'Error en validaciones',
+        text: 'La dirección es requeridad.'
+      })
+    }else if(this.formGroup.controls['correo'].invalid){
+      Swal.fire({
+        icon: 'error',
+        title:'Error en validaciones',
+        text: 'El correo es requerido y debe ser válido.'
+      })
+
+    }else if(this.formGroup.controls['contraseña'].invalid){
+      Swal.fire({
+        icon: 'error',
+        title:'Error en validaciones',
+        text: 'La contraseña es requeridad.'
+      })
+    }else if(this.formGroup.controls['confirmar'].invalid){
+      Swal.fire({
+        icon: 'error',
+        title:'Error en validaciones',
+        text: 'El campo de confirmar contraseña es requerido.'
+      })
+    } else {
+      const nuevoCliente = this.formGroup.value;
+      this.ClienteService.addCliente(nuevoCliente).subscribe(
+        (response) => {
+          console.log('Usuario agregado:', response);
+          this.formGroup.reset();
+
+          this.matDialogRef.close();
+        },
+        (error) => {
+          console.error('Error al agregar el usuario:', error);
+          // Manejar el error adecuadamente, por ejemplo, mostrar un mensaje de error.
+        }
+      );
+
     }
   }
+
 
   estado = true;
   textoEstado = 'Activo';

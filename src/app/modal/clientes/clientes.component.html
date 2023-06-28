@@ -7,42 +7,53 @@
    <p>En esta ventana podrás crear un nuevo cliente.</p>
   </div>
    <div mat-dialog-content class="custom-dialog-content">
-     <form [formGroup]="formGroup">
+     <form (ngSubmit)="onSave()" [formGroup]="formGroup">
        <div class="select">
-         <!-- <input type="text" placeholder="Nombre:" formControlName="nombre" name="" id="">
-         <span class="span" *ngIf="formGroup.get('nombre')?.invalid && formGroup.get('nombre')?.touched">
+         <input type="text" placeholder="Nombre:" formControlName="nombre" name="" id="">
+         <span class="span" *ngIf="formGroup.get('nombre')?.hasError('required')&& formGroup.get('nombre')?.touched">
            El nombre es requerido.
          </span>
+         <span class="span" *ngIf="formGroup.get('nombre')?.hasError('pattern')">
+          Solo se permiten letras.
+        </span>
+
          <input type="text" placeholder="Apellido:" formControlName="apellido" name="" id="">
-         <span class="span" *ngIf="formGroup.get('apellido')?.invalid && formGroup.get('apellido')?.touched">
-           El apelldio es requerido.
-         </span> -->
+         <span class="span" *ngIf="formGroup.get('apellido')?.hasError('required')&& formGroup.get('apellido')?.touched">
+           El apellido es requerido.
+         </span>
+         <span class="span" *ngIf="formGroup.get('apellido')?.hasError('pattern')">
+          Solo se permiten letras.
+        </span>
+
          <input type="text" placeholder="Télefono:"  formControlName="telefono" name="" id="">
          <span class="span" *ngIf="formGroup.get('telefono')?.hasError('required') && formGroup.get('telefono')?.touched">
            El télefono es requerido y debe ser valido.
          </span>
          <span class="span" *ngIf="formGroup.get('telefono')?.hasError('pattern')">
-          Solo debe ser diez números
+          Solo debe ser diez números.
         </span>
 
          <input type="text"  placeholder="Dirección:" formControlName="direccion" name="direccion" id="">
-         <span class="span" *ngIf="formGroup.get('direccion')?.invalid && formGroup.get('direccion')?.touched">
-           La dirección es requeridad
+         <span class="span" *ngIf="formGroup.get('direccion')?.hasError('required')&& formGroup.get('direccion')?.touched">
+           La dirección es requeridad.
          </span>
 
-         <input type="email"  placeholder="Email:"  formControlName="email" name="" id="">
-         <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+         <input type="email"  placeholder="Email:"  formControlName="correo" name="" id="">
+         <span class="span" *ngIf="formGroup.get('correo')?.hasError('required')&& formGroup.get('correo')?.touched">
            El email es requerido y debe ser válido.
          </span>
 
-         <!-- <input type="password" placeholder="Contraseña:" formControlName="contraseña" name="" id="">
-         <span class="span" *ngIf="formGroup.get('contraseña')?.invalid && formGroup.get('contraseña')?.touched">
+         <input type="password" placeholder="Contraseña:" formControlName="contraseña" name="" id="">
+         <span class="span" *ngIf="formGroup.get('contraseña')?.hasError('required')&& formGroup.get('contraseña')?.touched">
            La contraseña es requeriadad.
          </span>
          <input type="password" placeholder="Confirmar contraseña:" formControlName="confirmar" name="" id="">
-         <span class="span" *ngIf="formGroup.get('confirmar')?.invalid && formGroup.get('confirmar')?.touched">
+         <span class="span" *ngIf="formGroup.get('validators')?.hasError('error')">
+          La contraseñas no coinciden.
+        </span>
+         <span class="span" *ngIf="formGroup.get('confirmar')?.hasError('required') && formGroup.get('confirmar')?.touched">
            La confrimación es requeridad.
-         </span> -->
+         </span>
        </div>
      <div>
        <div class="estado">
@@ -52,7 +63,7 @@
          </div>
        </div>
        <div class="Botones" mat-dialog-actions>
-         <button class="crear" mat-button (click)="onSave()">Guardar</button>
+         <button class="crear" mat-button type="submit">Guardar</button>
        </div>
        <div class="texto-politicas">
          <p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>

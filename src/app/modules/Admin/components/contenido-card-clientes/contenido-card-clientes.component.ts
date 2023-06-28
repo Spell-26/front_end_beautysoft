@@ -1,9 +1,13 @@
+
 import {Component, OnInit, TemplateRef} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogWithTemplateComponent } from 'src/app/components/dialog-with-template/dialog-with-template.component';
 import { DialogService } from 'src/app/service/dialog.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {ClienteService, clientes} from "../../../../service/cliente/cliente.service";
+
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contenido-card-clientes',
@@ -12,12 +16,15 @@ import {ClienteService, clientes} from "../../../../service/cliente/cliente.serv
 })
 export class ContenidoCardClientesComponent implements OnInit{
 
+  desplegados:any[]=[];
+
   //almacenar clientes provenientes del query
   clientes : clientes[] = [];
   //en el constructor incluyo el servicio que hace las peticiones al backend
-  constructor(private dialogService:DialogService, private formBuilder: FormBuilder, private clienteService: ClienteService  ){}
+  constructor(private dialogService:DialogService, private formBuilder: FormBuilder, private clienteService: ClienteService ,private router:Router ){}
   //Funcion de Angular, ejecuta la funcion antes de cargar el componente
   ngOnInit(): void {
+    const id =
     this.listarCliente()
   }
 
@@ -39,20 +46,24 @@ export class ContenidoCardClientesComponent implements OnInit{
         console.log(error);
       })
 
-
     }
 
+    //editar boton
 
-  //editar boton
-
- private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
+    private matDialogRef !: MatDialogRef<DialogWithTemplateComponent>;
 
 
- formGroup: FormGroup = this.formBuilder.group({
-  email: ['', [Validators.required, Validators.email]],
+    formGroup: FormGroup = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
 
- })
+    })
 
+    modificar(id:string){
+      const datos={
+        email: this.formGroup.get('email')?.value.email
+      }
+      this.clienteService.updateCliente(id,datos)
+    }
 
 
  openDialogCustom(){
@@ -75,14 +86,16 @@ export class ContenidoCardClientesComponent implements OnInit{
    })
  }
  onSave() {
-  if (this.formGroup.valid) {
-    console.log(this.formGroup.value);
-    this.formGroup.reset();
-    this.matDialogRef.close();
-  } else {
-    // El formulario no es válido, puedes mostrar un mensaje de error o realizar alguna acción adicional.
-    //utilizar libreria snackbar para mostrar un error en un tiempo definido
+  if(this.formGroup.controls['email']){
+    Swal.fire({
+      icon: 'error',
+      title:'Error en validaciones',
+      text: 'El correo es requerido y debe ser válido.'
+    })
+  }else{
+
   }
+
 }
 
 
@@ -104,9 +117,8 @@ export class ContenidoCardClientesComponent implements OnInit{
   protected ocultar_opciones:boolean = true;
 
 
-  mostrarBurbuja():void {
-    this.editar_collapsed = !this.editar_collapsed;
-    this.mostrarOpciones();
+  mostrarBurbuja(index:number):void {
+    this.desplegados[index]=!this.desplegados[index];
   }
   mostrarOpciones():void{
     if (!this.editar_collapsed){

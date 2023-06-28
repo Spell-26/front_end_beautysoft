@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <div class="container">
-  <div class="card_profile" *ngFor="let c of clientes ">
+  <div class="card_profile" *ngFor="let c of clientes; let i = index ">
     <div class="container-info">
       <div class="estado">
         <div (click)="cambiarEstado()" [ngClass]="{'estado-hijo': estado, 'estado-hijo-click': !estado}">
@@ -9,16 +9,16 @@
                   {{textoEstado}}
               </span>
         </div>
-        <div class="editar" (click)="mostrarBurbuja()">
+        <div class="editar" (click)="mostrarBurbuja(i)">
       <span class="material-symbols-outlined">
         more_vert
       </span>
         </div>
       </div>
-      <div [ngClass]="{'settings-content-collapsed': editar_collapsed, 'settings-content': !editar_collapsed}">
-        <div [hidden]="ocultar_opciones">
+      <div [ngClass]="{'settings-content-collapsed': desplegados[i]==false, 'settings-content': desplegados[i]==true}">
+        <div [hidden]="!desplegados[i]">
           <div class="botonEditar" (click)="openDialogWithTemplate(template2)">Editar</div>
-          <div class="botonEliminar" (click)="openDialogWithTemplate(template3)" >Eliminar</div>
+          <div class="botonEliminar" (click)="eliminarCliente(c.id_cliente)" >Eliminar</div>
         </div>
       </div>
       <img src="/assets/img/card_user.jpg" alt="">
@@ -55,9 +55,9 @@
 <div mat-dialog-content class="custom-dialog-content">
     <p style="font-weight: bold;">Al eliminar este cliente su informacion será eliminda permanentemente ¿Deseas Continuar?</p>
 </div>
-<div *ngFor="let c of clientes ">
+<div >
   <div class="Botones-eliminar" mat-dialog-actions >
-      <button class="eliminar__crear" mat-button (click)="eliminarCliente(c.id_cliente)">Continuar</button>
+      <button class="eliminar__crear" mat-button >Continuar</button>
       <button class="cancelar" mat-button mat-dialog-close>Cancelar</button>
   </div>
 
@@ -78,8 +78,8 @@
   </div>
 
    <div mat-dialog-content class="custom-dialog-content">
-     <form [formGroup]="formGroup">
-       <div class="select">
+     <form (ngSubmit)="onSave()" [formGroup]="formGroup">
+       <div class="select" >
 
          <input type="email" placeholder="Email"  formControlName="email" name="" id="">
          <span class="span" *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
@@ -94,7 +94,7 @@
          </div>
        </div>
        <div class="Botones" mat-dialog-actions>
-         <button class="crear" mat-button (click)="onSave()">Guardar</button>
+         <button class="crear" mat-button type="submit">Guardar</button>
        </div>
        <div class="texto-politicas">
          <p>Al diligenciar este formulario, usted acepta nuestras politicas de tratamiento de datos persopnales y otorga su consentimiento para que estos sean almecenados, recopilados y procesados. </p>

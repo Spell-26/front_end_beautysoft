@@ -25,7 +25,7 @@ export class ClienteService {
   }
 //Adiconar cliente
   addCliente(cliente:any) : Observable<any>{
-    return this.http.get('/api/clientes', cliente);
+    return this.http.post('/api/clientes', cliente);
 
   }
   //Eliminar cliente
@@ -34,7 +34,7 @@ export class ClienteService {
   }
 
   //Actualizar cliente
-  updateCliente(id:string, cliente: clientes) : Observable<any>{
+  updateCliente(id:string, cliente: any) : Observable<any>{
     return this.http.put('/api/clientes' + '/' + id, cliente);
   }
 
